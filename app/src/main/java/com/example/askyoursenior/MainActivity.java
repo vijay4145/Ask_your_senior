@@ -40,7 +40,9 @@ public class MainActivity extends AppCompatActivity {
         FirebaseUser currentUser = mAuth.getCurrentUser();
         if(currentUser != null) {
 //            signInButton.setVisibility(View.GONE);
-            updateUI(currentUser);
+//            updateUI(currentUser);
+            Intent intent = new Intent(this, AppWalkthrough.class);
+            startActivity(intent);
         }
     }
 

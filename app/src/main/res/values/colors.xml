@@ -7,4 +7,16 @@
     <color name="teal_700">#FF018786</color>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+
+
+    <color name="crimson1">#DC143C</color>
+    <color name="crimson2">#EC3257</color>
+    <color name="crimson3">#F05C79</color>
+    <color name="crimson4">#F4869C</color>
+
+
+    <color name="darkblue">#141466</color>
+    <color name="lightblue">#3490dc</color>
+    <color name="blue1">#2929cc</color>
+    <color name="blue2">#DFEBFD</color>
 </resources>
