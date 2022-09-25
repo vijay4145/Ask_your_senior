@@ -47,6 +47,41 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintBottom_toBottomOf="parent"/>
 
+    <RadioGroup
+        android:id="@+id/radio_group"
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        app:layout_constraintTop_toTopOf="@+id/skip_button"
+        app:layout_constraintBottom_toBottomOf="@id/skip_button"
+        app:layout_constraintStart_toEndOf="@id/skip_button"
+        app:layout_constraintEnd_toStartOf="@id/done_button"
+        android:paddingTop="5dp"
+        android:orientation="horizontal">
+
+        <com.google.android.material.radiobutton.MaterialRadioButton
+            android:id="@+id/radio1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:useMaterialThemeColors="false"
+            android:checked="true"
+            android:button="@drawable/dot_indicator_radio_btn"/>
+        <com.google.android.material.radiobutton.MaterialRadioButton
+            android:id="@+id/radio2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:useMaterialThemeColors="false"
+            android:button="@drawable/dot_indicator_radio_btn"/>
+        <com.google.android.material.radiobutton.MaterialRadioButton
+            android:id="@+id/radio3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:useMaterialThemeColors="false"
+            android:button="@drawable/dot_indicator_radio_btn"/>
+
+    </RadioGroup>
+
+
+
 
 
 

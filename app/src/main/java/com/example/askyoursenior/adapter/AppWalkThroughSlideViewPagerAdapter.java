@@ -4,6 +4,7 @@ import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.RadioGroup;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -17,10 +18,11 @@ import java.util.List;
 public class AppWalkThroughSlideViewPagerAdapter extends PagerAdapter {
     private Context context;
     private List<Integer> layoutList;
-
-    public AppWalkThroughSlideViewPagerAdapter(Context context, List<Integer> layoutList) {
+    private RadioGroup radioGroup;
+    public AppWalkThroughSlideViewPagerAdapter(Context context, List<Integer> layoutList, RadioGroup radioGroup) {
         this.context = context;
         this.layoutList = layoutList;
+        this.radioGroup = radioGroup;
     }
 
     @Override

@@ -4,12 +4,15 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="app/src/main/res/drawable/dot_indicator.xml" value="0.1945" />
+        <entry key="app/src/main/res/drawable/dot_indicator_radio_btn.xml" value="0.1945" />
+        <entry key="app/src/main/res/drawable/ic_baseline_active_circle.xml" value="0.1945" />
         <entry key="app/src/main/res/layout/activity_app_walkthrough.xml" value="0.19375" />
         <entry key="app/src/main/res/layout/activity_login.xml" value="0.17864583333333334" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.19375" />
         <entry key="app/src/main/res/layout/app_walkthrough_page1.xml" value="0.19270833333333334" />
         <entry key="app/src/main/res/layout/app_walkthrough_page2.xml" value="0.19270833333333334" />
         <entry key="app/src/main/res/layout/app_walkthrough_page3.xml" value="0.2" />
+        <entry key="app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.1" />
       </map>
     </option>
   </component>
