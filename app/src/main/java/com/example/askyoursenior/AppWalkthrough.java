@@ -3,10 +3,12 @@ package com.example.askyoursenior;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.viewpager.widget.ViewPager;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.LinearLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.example.askyoursenior.adapter.AppWalkThroughSlideViewPagerAdapter;
 
@@ -59,6 +61,19 @@ public class AppWalkthrough extends AppCompatActivity {
             }
         });
 
+        donebtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                loadLoginPage();
+            }
+        });
+        skipbtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                loadLoginPage();
+            }
+        });
+
     }
 
     void btnTranslation(TextView textView, float offset, boolean isvisible){
@@ -72,4 +87,12 @@ public class AppWalkthrough extends AppCompatActivity {
             textView.setTranslationX(-offset);
         }
     }
+
+    void loadLoginPage(){
+        Intent intent = new Intent(this, LoginActivity.class);
+        startActivity(intent);
+        finish();
+    }
+
+
 }

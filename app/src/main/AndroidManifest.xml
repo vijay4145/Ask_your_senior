@@ -16,6 +16,9 @@
         android:theme="@style/Theme.AskYourSenior"
         tools:targetApi="31">
         <activity
+            android:name=".LoginActivity"
+            android:exported="false" />
+        <activity
             android:name=".AppWalkthrough"
             android:exported="false" />
         <activity

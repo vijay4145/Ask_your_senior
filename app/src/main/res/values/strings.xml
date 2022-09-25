@@ -1,10 +1,17 @@
 <resources>
     <string name="app_name">Ask Your Senior</string>
 
-<!--    app walkthrough -->
+    <!--    app walkthrough -->
     <string name="app_description_page1">"Here to help you to get connected with seniors of your organization"</string>
     <string name="app_title_page2">Collab in Project with seniors</string>
     <string name="app_description_page2">You can be a member of your seniors project by just one click</string>
     <string name="app_title_page3">Buy Old Academics Books Of Your Senior</string>
     <string name="app_description_page3">Worry about buying expensive new books from book store don\'t worry when you can Ask Your Senior</string>
+
+<!--    login page-->
+    <string name="google_sign_in_instruction">Sign in with google to continue with us</string>
+    <string name="username_hint">Username</string>
+    <string name="organization_hint">Enter Your Organization</string>
+    <string name="continue_btn">Continue</string>
+
 </resources>
