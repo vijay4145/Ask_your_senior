@@ -14,4 +14,9 @@
     <string name="organization_hint">Enter Your Organization</string>
     <string name="continue_btn">Continue</string>
 
+<!--    bottom navigation bar-->
+    <string name="homepage">Homepage</string>
+    <string name="collab">Collab</string>
+    <string name="profile">Profile</string>
+
 </resources>

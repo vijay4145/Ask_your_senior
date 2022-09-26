@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/home_page_section_in_bottom_navigation"
+        android:title="@string/homepage"
+        android:icon="@drawable/ic_baseline_home_24"/>
+    <item
+        android:id="@+id/collab_in_project_section_in_bottom_navigation"
+        android:title="@string/collab"
+        android:icon="@drawable/ic_baseline_group_24"/>
+    <item
+        android:id="@+id/profile_section_in_bottom_navigation"
+        android:title="@string/profile"
+        android:icon="@drawable/ic_baseline_account_circle_24"/>
+
+
+</menu>
