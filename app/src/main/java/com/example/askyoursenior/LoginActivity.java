@@ -9,6 +9,8 @@ import android.util.Log;
 import android.widget.Toast;
 
 import com.example.askyoursenior.databinding.ActivityLoginBinding;
+import com.example.askyoursenior.firebaseoperation.RealtimeDatabase;
+import com.example.askyoursenior.model.User;
 import com.google.android.gms.auth.api.signin.GoogleSignIn;
 import com.google.android.gms.auth.api.signin.GoogleSignInAccount;
 import com.google.android.gms.auth.api.signin.GoogleSignInClient;
@@ -34,13 +36,24 @@ public class LoginActivity extends AppCompatActivity {
         activityLoginBinding.signInButton.setOnClickListener(view -> signIn());
         activityLoginBinding.continueBtn.setOnClickListener(view -> moveToHomePage());
 
-
-        
     }
 
     private void moveToHomePage() {
-        if(!anyErrorForBlankFields()){
+        FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
+        if(user == null){
+            Toast.makeText(this, "please signin with google", Toast.LENGTH_SHORT).show();
+        }
+        else if(!anyErrorForBlankFields()){
             Toast.makeText(this, "Signincompleted", Toast.LENGTH_SHORT).show();
+            String name = activityLoginBinding.usernameEdittext.getText().toString();
+            String email = user.getEmail();
+            String uid = user.getUid();
+            String number = user.getPhoneNumber();
+            String username = email.split("@")[0];
+            String orgname = activityLoginBinding.organizationEdittext.getText().toString();
+            User muser = new User(name, username, number, uid, orgname);
+            RealtimeDatabase.PushUserDetailsAndLoadHomePageActivity(this, muser); //this method will pushuserdetail and load homepage activity
+
         }
     }
 
