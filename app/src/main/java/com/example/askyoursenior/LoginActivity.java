@@ -53,7 +53,6 @@ public class LoginActivity extends AppCompatActivity {
             String orgname = activityLoginBinding.organizationEdittext.getText().toString();
             User muser = new User(name, username, number, uid, orgname);
             RealtimeDatabase.PushUserDetailsAndLoadHomePageActivity(this, muser); //this method will pushuserdetail and load homepage activity
-
         }
     }
 
