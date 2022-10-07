@@ -4,7 +4,6 @@ public class User {
     String name;
     String username;
     String phone_number;
-    String uid;
     String organisationname;
 
 
@@ -15,7 +14,6 @@ public class User {
         this.name = name;
         this.username = username;
         this.phone_number = phone_number;
-        this.uid = uid;
         this.organisationname = organisationname;
     }
 
@@ -44,13 +42,6 @@ public class User {
         this.phone_number = phone_number;
     }
 
-    public String getUid() {
-        return uid;
-    }
-
-    public void setUid(String uid) {
-        this.uid = uid;
-    }
 
     public String getOrganisationname() {
         return organisationname;

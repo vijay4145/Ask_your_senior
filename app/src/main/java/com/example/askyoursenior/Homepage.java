@@ -1,18 +1,14 @@
 package com.example.askyoursenior;
 
-import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.databinding.DataBindingUtil;
 
 import android.os.Bundle;
-import android.view.MenuItem;
-import android.widget.Toast;
 
 import com.example.askyoursenior.databinding.ActivityHomepageBinding;
 import com.example.askyoursenior.homepage_fragments.CollabProjectFragment;
 import com.example.askyoursenior.homepage_fragments.HomeFragment;
-import com.example.askyoursenior.homepage_fragments.ProfileFragment;
-import com.google.android.material.navigation.NavigationBarView;
+import com.example.askyoursenior.homepage_fragments.profilepackage.ProfileFragment;
 
 public class Homepage extends AppCompatActivity {
     ActivityHomepageBinding homepageBinding;

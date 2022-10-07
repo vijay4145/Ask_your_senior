@@ -1,4 +1,4 @@
-package com.example.askyoursenior.homepage_fragments;
+package com.example.askyoursenior.homepage_fragments.profilepackage;
 
 import android.os.Bundle;
 
@@ -14,10 +14,6 @@ import com.example.askyoursenior.R;
 
 
 public class ProfileFragment extends Fragment {
-
-
-    // TODO: Rename and change types of parameters
-
     public ProfileFragment() {
         // Required empty public constructor
     }
