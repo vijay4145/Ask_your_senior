@@ -59,6 +59,7 @@
             app:layout_constraintTop_toTopOf="@id/books_searchview" />
 
         <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/book_list_recycler_view"
             android:layout_width="0dp"
             android:layout_height="0dp"
             android:layout_margin="15dp"
