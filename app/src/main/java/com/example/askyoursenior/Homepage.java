@@ -32,24 +32,25 @@ public class Homepage extends AppCompatActivity {
 
 
 //        -----------------------------
-        FirebaseMessaging.getInstance().getToken()
-                .addOnCompleteListener(new OnCompleteListener<String>() {
-                    @Override
-                    public void onComplete(@NonNull Task<String> task) {
-                        if (!task.isSuccessful()) {
-                            Toast.makeText(Homepage.this, "token not generated", Toast.LENGTH_SHORT).show();
-                            return;
-                        }
-
-                        // Get new FCM registration token
-                        String token = task.getResult();
-
-                        // Log and toast
-                        homepageBinding.token.setText(token);
-                        homepageBinding.token1.setText(token);
-                        Toast.makeText(Homepage.this, "succesful", Toast.LENGTH_SHORT).show();
-                    }
-                });
+//        make service of this code
+//        FirebaseMessaging.getInstance().getToken()
+//                .addOnCompleteListener(new OnCompleteListener<String>() {
+//                    @Override
+//                    public void onComplete(@NonNull Task<String> task) {
+//                        if (!task.isSuccessful()) {
+//                            Toast.makeText(Homepage.this, "token not generated", Toast.LENGTH_SHORT).show();
+//                            return;
+//                        }
+//
+//                        // Get new FCM registration token
+//                        String token = task.getResult();
+//
+//                        // Log and toast
+//                        homepageBinding.token.setText(token);
+//                        homepageBinding.token1.setText(token);
+//                        Toast.makeText(Homepage.this, "succesful", Toast.LENGTH_SHORT).show();
+//                    }
+//                });
 
 //        -------------------
 
