@@ -13,27 +13,185 @@
         tools:context=".homepage_fragments.ProfileFragment">
 
 
-        <TextView
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:text="To be completed by"
-            android:textSize="25sp"
-            app:layout_constraintBottom_toTopOf="@+id/textView"
-            app:layout_constraintEnd_toEndOf="@+id/textView"
-            app:layout_constraintStart_toStartOf="@+id/textView" />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
 
-        <TextView
-            android:id="@+id/textView"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:text="Gaurav Apte"
-            android:layout_margin="50dp"
-            android:fontFamily="@font/bungee"
-            android:textSize="55sp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintBottom_toBottomOf="parent"/>
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="400dp"
+                android:background="@drawable/layout_gradient">
+
+                <TextView
+                    android:id="@+id/user_name"
+                    android:layout_width="156dp"
+                    android:layout_height="35dp"
+                    android:layout_alignParentStart="true"
+                    android:layout_alignParentTop="true"
+                    android:layout_alignParentEnd="true"
+                    android:layout_alignParentBottom="true"
+                    android:layout_marginStart="56dp"
+                    android:layout_marginTop="37dp"
+                    android:layout_marginEnd="205dp"
+                    android:layout_marginBottom="328dp"
+                    android:text="@string/user_name"
+                    android:textAlignment="center"
+                    android:textColor="#A7FFEB"
+                    android:textSize="24sp"
+                    tools:ignore="TextContrastCheck" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="460dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:layout_marginTop="-250dp"
+                android:background="@drawable/gradient">
+
+                <ImageView
+                    android:id="@+id/acc_pic"
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="15dp"
+                    android:contentDescription="@string/todo"
+                    android:src="@drawable/ic_baseline_account_circle_24"
+                    tools:ignore="ImageContrastCheck" />
+
+                <TextView
+                    android:id="@+id/user_id"
+                    android:layout_width="150dp"
+                    android:layout_height="20dp"
+                    android:layout_below="@+id/acc_pic"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="8dp"
+                    android:text="@string/user_id"
+                    android:textAlignment="center"
+                    android:textColor="@color/black"
+                    android:textSize="14sp" />
+
+                <TextView
+                    android:id="@+id/email_id"
+                    android:layout_width="150dp"
+                    android:layout_height="20dp"
+                    android:layout_below="@+id/user_id"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="8dp"
+                    android:text="@string/email_id"
+                    android:textAlignment="center"
+                    android:textColor="@color/black"
+                    android:textSize="14sp" />
+
+                <TextView
+                    android:id="@+id/org_name"
+                    android:layout_width="150dp"
+                    android:layout_height="20dp"
+                    android:layout_below="@+id/email_id"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="8dp"
+                    android:text="@string/oraganisation_name"
+                    android:textAlignment="center"
+                    android:textColor="@color/black"
+                    android:textSize="14sp" />
+
+                <TextView
+                    android:id="@+id/myprojects"
+                    android:layout_width="300dp"
+                    android:layout_height="40dp"
+                    android:layout_below="@+id/org_name"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="20dp"
+                    android:text="@string/my_projects"
+                    android:textAlignment="center"
+                    android:textSize="25sp" />
+
+                <ImageButton
+                    android:id="@+id/imageButton"
+                    android:layout_width="35dp"
+                    android:layout_height="40dp"
+                    android:layout_below="@+id/org_name"
+                    android:layout_marginStart="38dp"
+                    android:layout_marginTop="20dp"
+                    android:contentDescription="@string/todo1"
+                    app:srcCompat="@drawable/ic_baseline_folder_24"
+                    tools:ignore="TouchTargetSizeCheck,SpeakableTextPresentCheck,DuplicateSpeakableTextCheck"
+                    android:background="@color/white"/>
+
+                <TextView
+                    android:id="@+id/myorders"
+                    android:layout_width="300dp"
+                    android:layout_height="40dp"
+                    android:layout_below="@+id/myprojects"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="20dp"
+                    android:text="@string/my_orders"
+                    android:textAlignment="center"
+                    android:textSize="25sp" />
+
+                <ImageButton
+                    android:id="@+id/Cart"
+                    android:layout_width="35dp"
+                    android:layout_height="40dp"
+                    android:layout_below="@+id/myprojects"
+                    android:layout_marginStart="38dp"
+                    android:layout_marginTop="20dp"
+                    android:contentDescription="@string/todo1"
+                    app:srcCompat="@drawable/ic_baseline_shopping_cart_24"
+                    tools:ignore="TouchTargetSizeCheck"
+                    android:background="@color/white"/>
+
+                <TextView
+                    android:id="@+id/myacc"
+                    android:layout_width="300dp"
+                    android:layout_height="40dp"
+                    android:layout_below="@+id/myorders"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="20dp"
+                    android:text="@string/account_settings1"
+                    android:textAlignment="center"
+                    android:textSize="25sp" />
+
+                <ImageButton
+                    android:id="@+id/acc"
+                    android:layout_width="35dp"
+                    android:layout_height="40dp"
+                    android:layout_below="@+id/Cart"
+                    android:layout_marginStart="38dp"
+                    android:layout_marginTop="20dp"
+                    android:contentDescription="@string/todo1"
+                    app:srcCompat="@drawable/ic_baseline_account_box_24"
+                    tools:ignore="TouchTargetSizeCheck"
+                    android:background="@color/white"/>
+
+                <TextView
+                    android:id="@+id/logout"
+                    android:layout_width="300dp"
+                    android:layout_height="40dp"
+                    android:layout_below="@+id/myacc"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="20dp"
+                    android:text="@string/logout"
+                    android:textAlignment="center"
+                    android:textSize="25sp" />
+
+                <ImageButton
+                    android:id="@+id/logout_pic"
+                    android:layout_width="35dp"
+                    android:layout_height="40dp"
+                    android:layout_below="@+id/acc"
+                    android:layout_marginStart="38dp"
+                    android:layout_marginTop="20dp"
+                    android:contentDescription="@string/todo1"
+                    app:srcCompat="@drawable/ic_baseline_logout_24"
+                    tools:ignore="TouchTargetSizeCheck"
+                    android:background="@color/white"/>
+
+            </RelativeLayout>
+
+
+        </LinearLayout>
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

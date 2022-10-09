@@ -18,5 +18,16 @@
     <string name="homepage">Homepage</string>
     <string name="collab">Collab</string>
     <string name="profile">Profile</string>
+    <string name="user_id">User_ID</string>
+    <string name="email_id">Email_ID</string>
+    <string name="oraganisation_name">Oraganisation_Name</string>
+    <string name="user_name">User_Name</string>
+    <string name="todo">TODO</string>
+    <string name="my_projects">My Projects</string>
+    <string name="todo1">TODO</string>
+    <string name="account_settings">Account Settings</string>
+    <string name="my_orders">My Orders</string>
+    <string name="logout">Logout</string>
+    <string name="account_settings1">Account Settings</string>
 
 </resources>
