@@ -39,7 +39,7 @@
                     android:textAlignment="center"
                     android:textColor="#A7FFEB"
                     android:textSize="24sp"
-                    tools:ignore="TextContrastCheck" />
+                    tools:ignore="TextContrastCheck"/>
             </RelativeLayout>
 
             <RelativeLayout
