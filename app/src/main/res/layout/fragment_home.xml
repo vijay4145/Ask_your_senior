@@ -13,27 +13,70 @@
         tools:context=".homepage_fragments.HomeFragment">
 
         <TextView
-            android:layout_width="0dp"
+            android:id="@+id/heading_of_homepage"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="To be completed by"
-            android:textSize="25sp"
-            app:layout_constraintBottom_toTopOf="@+id/textView"
-            app:layout_constraintEnd_toEndOf="@+id/textView"
-            app:layout_constraintStart_toStartOf="@+id/textView" />
+            android:layout_marginLeft="10dp"
+            android:fontFamily="@font/baloo_bhai"
+            android:text="Books"
+            android:textSize="40sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
-        <TextView
-            android:id="@+id/textView"
+        <ImageButton
+            android:id="@+id/notification_imagebutton"
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"
+            android:layout_marginRight="10dp"
+            android:background="@color/white"
+            android:src="@drawable/ic_baseline_notifications_24"
+            app:layout_constraintBottom_toBottomOf="@id/heading_of_homepage"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/heading_of_homepage" />
+
+        <androidx.appcompat.widget.SearchView
+            android:id="@+id/books_searchview"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:text="Vijay"
-            android:layout_margin="50dp"
-            android:fontFamily="@font/bungee"
-            android:textSize="55sp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:background="@drawable/searchview_bg"
+            app:iconifiedByDefault="false"
+            app:layout_constraintEnd_toStartOf="@id/filterbutton"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/heading_of_homepage"
+            app:queryHint="Search here..." />
+
+        <ImageButton
+            android:id="@+id/filterbutton"
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"
+            android:layout_marginEnd="12dp"
+            android:background="@color/white"
+            android:src="@drawable/ic_baseline_filter_list_24"
+            app:layout_constraintBottom_toBottomOf="@id/books_searchview"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@id/books_searchview" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/book_list_recycler_view"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_margin="15dp"
+            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintBottom_toBottomOf="parent"/>
+            app:layout_constraintTop_toBottomOf="@id/books_searchview" />
 
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_baseline_add_24"
+            android:tint="@color/white"
+            android:layout_margin="20dp"
+            android:backgroundTint="@color/blue2"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"/>
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>
