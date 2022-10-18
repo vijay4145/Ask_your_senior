@@ -84,8 +84,9 @@ public class HomeFragment extends Fragment {
             if(bookDetail.getBook_name().toLowerCase().contains(newText)) newList.add(bookDetail);
         }
         if(newList.isEmpty())
-            Toast.makeText(getContext(), "No Data Found", Toast.LENGTH_SHORT).show();
+            fragmentHomeBinding.noDataLayout.setVisibility(View.VISIBLE);
         else
+            fragmentHomeBinding.noDataLayout.setVisibility(View.INVISIBLE);
             bookListRecyclerviewAdapter.setfilteredList(newList);
     }
 }

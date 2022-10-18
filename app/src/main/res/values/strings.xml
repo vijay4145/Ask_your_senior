@@ -19,4 +19,7 @@
     <string name="collab">Collab</string>
     <string name="profile">Profile</string>
 
+<!--    homepage fragment i.e book page-->
+    <string name="no_data">NO Data Found</string>
+
 </resources>
