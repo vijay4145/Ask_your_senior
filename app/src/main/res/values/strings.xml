@@ -14,12 +14,16 @@
     <string name="organization_hint">Enter Your Organization</string>
     <string name="continue_btn">Continue</string>
 
-<!--    bottom navigation bar-->
+    <!--    bottom navigation bar-->
     <string name="homepage">Homepage</string>
     <string name="collab">Collab</string>
     <string name="profile">Profile</string>
 
-<!--    homepage fragment i.e book page-->
+    <!--    homepage fragment i.e book page-->
     <string name="no_data">NO Data Found</string>
+    <string name="add_button">Add</string>
+    <string name="book_name_edittext_hint">Book Name</string>
+    <string name="publication_edittext_hint">Publication</string>
+    <string name="description_edittext_hint">Desription</string>
 
 </resources>

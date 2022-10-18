@@ -1,4 +1,4 @@
-package com.example.askyoursenior.homepage_fragments;
+package com.example.askyoursenior.fragments;
 
 import android.os.Bundle;
 

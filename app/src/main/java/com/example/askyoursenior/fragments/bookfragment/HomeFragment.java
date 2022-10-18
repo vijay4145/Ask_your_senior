@@ -1,5 +1,6 @@
-package com.example.askyoursenior.homepage_fragments;
+package com.example.askyoursenior.fragments.bookfragment;
 
+import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
@@ -11,15 +12,12 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Toast;
 
-import com.example.askyoursenior.R;
 import com.example.askyoursenior.adapter.BookListRecyclerviewAdapter;
 import com.example.askyoursenior.databinding.FragmentHomeBinding;
 import com.example.askyoursenior.model.BookDetailModel;
 
 import java.util.ArrayList;
-import java.util.List;
 
 public class HomeFragment extends Fragment {
     FragmentHomeBinding fragmentHomeBinding;
@@ -76,6 +74,16 @@ public class HomeFragment extends Fragment {
                 return false;
             }
         });
+
+
+        fragmentHomeBinding.addIcon.setOnClickListener(view1 -> {
+            addIconAction();
+        });
+    }
+
+    private void addIconAction() {
+        Intent intent = new Intent(getContext(), AddBook.class);
+        startActivity(intent);
     }
 
     private void filterList(String newText) {
@@ -87,6 +95,6 @@ public class HomeFragment extends Fragment {
             fragmentHomeBinding.noDataLayout.setVisibility(View.VISIBLE);
         else
             fragmentHomeBinding.noDataLayout.setVisibility(View.INVISIBLE);
-            bookListRecyclerviewAdapter.setfilteredList(newList);
+        bookListRecyclerviewAdapter.setfilteredList(newList);
     }
 }

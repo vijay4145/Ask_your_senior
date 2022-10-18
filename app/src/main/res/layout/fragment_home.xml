@@ -10,7 +10,7 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:context=".homepage_fragments.HomeFragment">
+        tools:context=".fragments.bookfragment.HomeFragment">
 
         <TextView
             android:id="@+id/heading_of_homepage"
@@ -79,7 +79,7 @@
             app:layout_constraintBottom_toBottomOf="@id/guideline40">
             <com.airbnb.lottie.LottieAnimationView
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_height="0dp"
                 android:layout_weight="1"
                 app:lottie_autoPlay="true"
                 app:lottie_loop="true"
@@ -105,6 +105,7 @@
             app:layout_constraintTop_toBottomOf="@id/books_searchview" />
 
         <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/add_icon"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_margin="20dp"
