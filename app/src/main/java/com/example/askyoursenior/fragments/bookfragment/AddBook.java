@@ -9,6 +9,8 @@ import androidx.databinding.DataBindingUtil;
 
 import android.Manifest;
 import android.app.Activity;
+import android.app.Dialog;
+import android.app.ProgressDialog;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.pm.PackageManager;
@@ -19,6 +21,7 @@ import android.widget.Toast;
 
 import com.example.askyoursenior.R;
 import com.example.askyoursenior.databinding.ActivityAddBookBinding;
+import com.example.askyoursenior.firebaseoperation.FirebaseStorageOperation;
 import com.example.askyoursenior.firebaseoperation.RealtimeDatabase;
 import com.example.askyoursenior.model.BookDetailModel;
 import com.example.askyoursenior.model.SharedPreferenceDb;
@@ -28,6 +31,7 @@ public class AddBook extends AppCompatActivity {
     ActivityAddBookBinding activityAddBookBinding;
     ActivityResultLauncher<Intent> intentLauncher;
     private Uri selectedImageUri;
+    ProgressDialog dialog;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -83,6 +87,13 @@ public class AddBook extends AppCompatActivity {
             price.equals("") || description.equals("")){
             Toast.makeText(this, "Please complete all the fields", Toast.LENGTH_SHORT).show();
         }else{
+
+            dialog = new ProgressDialog(this);
+            dialog.setCancelable(false);
+            dialog.setMessage("Uploading Your Book...");
+            dialog.show();
+
+
             SharedPreferences shrd = getSharedPreferences(SharedPreferenceDb.DB_NAME, MODE_PRIVATE);
             String organization = shrd.getString(SharedPreferenceDb.ORGANIZATION_NAME, "no organization: fatal error");
             String username = shrd.getString(SharedPreferenceDb.USER_ID, "no user id: fatal error");
@@ -93,11 +104,20 @@ public class AddBook extends AppCompatActivity {
             bookDetailModel.setPrice(price);
             bookDetailModel.setDescription(description);
             bookDetailModel.setPosted_by(username);
+            bookDetailModel.setBook_image_url("null");
 
-            RealtimeDatabase.PushBookDetails(bookDetailModel, organization);
+            if(selectedImageUri != null)
+                FirebaseStorageOperation.pushDataWithBookImage(this, selectedImageUri, bookDetailModel, organization);
+            else
+                RealtimeDatabase.PushBookDetails(this, bookDetailModel, organization);
 
         }
 
+    }
+
+    public void submittedBookDetails(){
+        dialog.dismiss();
+        finish();
     }
 
 }

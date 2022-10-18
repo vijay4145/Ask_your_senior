@@ -3,6 +3,7 @@ package com.example.askyoursenior.model;
 public class BookDetailModel {
     String book_name, book_publication, posted_by, semester, branch, price;
     String description;
+    String book_image_url;
 
     public BookDetailModel() {
     }
@@ -73,5 +74,11 @@ public class BookDetailModel {
         this.description = description;
     }
 
+    public String getBook_image_url() {
+        return book_image_url;
+    }
 
+    public void setBook_image_url(String book_image_url) {
+        this.book_image_url = book_image_url;
+    }
 }
