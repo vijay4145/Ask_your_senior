@@ -24,6 +24,9 @@
     <string name="add_button">Add</string>
     <string name="book_name_edittext_hint">Book Name</string>
     <string name="publication_edittext_hint">Publication</string>
+    <string name="book_branch_edittext_hint">Branch</string>
+    <string name="book_semester_edittext_hint">Semester</string>
+    <string name="book_price">Price</string>
     <string name="description_edittext_hint">Desription</string>
 
 </resources>

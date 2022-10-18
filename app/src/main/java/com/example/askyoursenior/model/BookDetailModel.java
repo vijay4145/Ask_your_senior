@@ -7,13 +7,14 @@ public class BookDetailModel {
     public BookDetailModel() {
     }
 
-    public BookDetailModel(String book_name, String book_publication, String posted_by, String semester, String branch, String price) {
+    public BookDetailModel(String book_name, String book_publication, String posted_by, String semester, String branch, String price, String description) {
         this.book_name = book_name;
         this.book_publication = book_publication;
         this.posted_by = posted_by;
         this.semester = semester;
         this.branch = branch;
         this.price = price;
+        this.description = description;
     }
 
     public String getBook_name() {
@@ -63,4 +64,14 @@ public class BookDetailModel {
     public void setPrice(String price) {
         this.price = price;
     }
+
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
+    }
+
+
 }

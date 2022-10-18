@@ -46,14 +46,15 @@ public class HomeFragment extends Fragment {
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-        BookDetailModel book1 = new BookDetailModel("Software engineering", "Techneo", "by vijay4145", "fourth semester", "computer engineering", "440");
+//        String book_name, String book_publication, String posted_by, String semester, String branch, String price, String description, String organisationname
+        BookDetailModel book1 = new BookDetailModel("Software engineering", "Techneo", "by vijay4145", "fourth semester", "computer engineering", "440", "nothing");
         bookDetailModelArrayList = new ArrayList<>();
         bookDetailModelArrayList.add(book1);
-        BookDetailModel book2 = new BookDetailModel("Computer network", "Techneo", "by sahil07", "fourth semester", "computer engineering", "440");
+        BookDetailModel book2 = new BookDetailModel("Computer network", "Techneo", "by sahil07", "fourth semester", "computer engineering", "440", "nothing");
         bookDetailModelArrayList.add(book2);
-        BookDetailModel book3 = new BookDetailModel("data warehousing and mining", "Techneo", "by gapte02", "fourth semester", "computer engineering", "440");
+        BookDetailModel book3 = new BookDetailModel("data warehousing and mining", "Techneo", "by gapte02", "fourth semester", "computer engineering", "440", "nothing" );
         bookDetailModelArrayList.add(book3);
-        BookDetailModel book4 = new BookDetailModel("Theoretical computer science", "Techneo", "by vijay4145", "fourth semester", "computer engineering", "440");
+        BookDetailModel book4 = new BookDetailModel("Theoretical computer science", "Techneo", "by vijay4145", "fourth semester", "computer engineering", "440", "nothing");
         bookDetailModelArrayList.add(book4);
 
 

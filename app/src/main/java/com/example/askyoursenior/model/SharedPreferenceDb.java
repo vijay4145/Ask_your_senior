@@ -7,4 +7,6 @@ public class SharedPreferenceDb {
     public static final String NAME = "USER_NAME";
     public static final String PHONE_NUMBER = "USER_PHONE_NUMBER";
     public static final String  ORGANIZATION_NAME= "USER_ORGANIZATION_NAME";
+
+    public static final String NO_OF_BOOKS_UPLOADED = "NO_OF_BOOKS_UPLOADED";
 }
