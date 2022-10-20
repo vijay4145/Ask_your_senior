@@ -12,7 +12,7 @@ import android.widget.Toast;
 import com.example.askyoursenior.databinding.ActivityHomepageBinding;
 import com.example.askyoursenior.fragments.CollabProjectFragment;
 import com.example.askyoursenior.fragments.bookfragment.HomeFragment;
-import com.example.askyoursenior.fragments.profilepackage.ProfileFragment;
+import com.example.askyoursenior.Profile_Fragments.ProfileFragment;
 import com.example.askyoursenior.model.SharedPreferenceDb;
 import com.example.askyoursenior.notifications.NotificationOfNewUserRegisteredOnSameOrganization;
 import com.google.android.gms.tasks.OnCompleteListener;

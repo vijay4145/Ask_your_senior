@@ -1,14 +1,19 @@
 package com.example.askyoursenior;
 
+
+
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.os.Handler;
 import android.util.Log;
 import android.view.View;
+import android.widget.ArrayAdapter;
+import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -36,16 +41,14 @@ public class MainActivity extends AppCompatActivity {
 
         SharedPreferences shrd = getSharedPreferences(SharedPreferenceDb.DB_NAME, MODE_PRIVATE);
         boolean islogin = shrd.getBoolean(SharedPreferenceDb.IS_LOGIN, false);
-        if(!islogin) {
+        if (!islogin) {
             Intent intent = new Intent(this, AppWalkthrough.class);
             startActivity(intent);
             finish();
-        }else{
-            Intent intent = new Intent(this,Homepage.class);
+        } else {
+            Intent intent = new Intent(this, Homepage.class);
             startActivity(intent);
             finish();
         }
     }
-
-
 }
