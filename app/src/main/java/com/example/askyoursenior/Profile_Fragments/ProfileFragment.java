@@ -1,12 +1,4 @@
-<<<<<<<< HEAD:app/src/main/java/com/example/askyoursenior/Profile_Fragments/ProfileFragment.java
-<<<<<<<< HEAD:app/src/main/java/com/example/askyoursenior/Profile_Fragments/ProfileFragment.java
 package com.example.askyoursenior.Profile_Fragments;
-========
-package com.example.askyoursenior.homepage_fragments.profilepackage;
->>>>>>>> 64253d1dae023ab39c13abfb12ed18c1e244c74e:app/src/main/java/com/example/askyoursenior/homepage_fragments/profilepackage/ProfileFragment.java
-========
-package com.example.askyoursenior.homepage_fragments.profile_package;
->>>>>>>> origin/Profile_Creation:app/src/main/java/com/example/askyoursenior/homepage_fragments/profile_package/ProfileFragment.java
 
 import android.os.Bundle;
 
