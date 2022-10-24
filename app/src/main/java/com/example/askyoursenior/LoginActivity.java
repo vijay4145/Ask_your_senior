@@ -9,7 +9,7 @@ import android.util.Log;
 import android.widget.Toast;
 
 import com.example.askyoursenior.databinding.ActivityLoginBinding;
-import com.example.askyoursenior.firebaseoperation.RealtimeDatabase;
+import com.example.askyoursenior.firebaseoperation.RealtimeDatabaseOperation;
 import com.example.askyoursenior.model.User;
 import com.google.android.gms.auth.api.signin.GoogleSignIn;
 import com.google.android.gms.auth.api.signin.GoogleSignInAccount;
@@ -52,7 +52,7 @@ public class LoginActivity extends AppCompatActivity {
             String username = email.split("@")[0];
             String orgname = activityLoginBinding.organizationEdittext.getText().toString();
             User muser = new User(name, username, number, uid, orgname);
-            RealtimeDatabase.PushUserDetailsAndLoadHomePageActivity(this, muser); //this method will pushuserdetail and load homepage activity
+            RealtimeDatabaseOperation.PushUserDetailsAndLoadHomePageActivity(this, muser); //this method will pushuserdetail and load homepage activity
         }
     }
 

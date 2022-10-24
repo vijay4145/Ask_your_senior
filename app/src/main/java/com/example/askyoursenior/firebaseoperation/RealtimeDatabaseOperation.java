@@ -16,13 +16,11 @@ import com.example.askyoursenior.model.RealtimeDatabaseModel;
 import com.example.askyoursenior.model.SharedPreferenceDb;
 import com.example.askyoursenior.model.User;
 import com.google.android.gms.tasks.OnCompleteListener;
-import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.gms.tasks.Task;
-import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
-public class RealtimeDatabase {
+public class RealtimeDatabaseOperation {
 
     public static void PushUserDetailsAndLoadHomePageActivity(Context context, User user) {
         DatabaseReference databaseReference = FirebaseDatabase.getInstance().getReference();
@@ -60,6 +58,22 @@ public class RealtimeDatabase {
                 }
             }
         });
+    }
+
+
+
+
+    public static void pushAccessToken(String orgname, String accessToken, String userid){
+        DatabaseReference databaseReference = FirebaseDatabase.getInstance().getReference();
+        databaseReference.child(RealtimeDatabaseModel.USER).child(orgname).child(RealtimeDatabaseModel.TOKEN).child(userid).setValue(accessToken)
+                .addOnCompleteListener(new OnCompleteListener<Void>() {
+                    @Override
+                    public void onComplete(@NonNull Task<Void> task) {
+                        if(!task.isSuccessful())
+                            Log.d("FirebaseError", "accessToken pushed Failed " + task.getException());
+                        else Log.d("FirebaseError", "accessToken pushed");
+                    }
+                });
     }
 
 

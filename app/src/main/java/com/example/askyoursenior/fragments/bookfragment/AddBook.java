@@ -9,20 +9,18 @@ import androidx.databinding.DataBindingUtil;
 
 import android.Manifest;
 import android.app.Activity;
-import android.app.Dialog;
 import android.app.ProgressDialog;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.pm.PackageManager;
 import android.net.Uri;
 import android.os.Bundle;
-import android.view.View;
 import android.widget.Toast;
 
 import com.example.askyoursenior.R;
 import com.example.askyoursenior.databinding.ActivityAddBookBinding;
 import com.example.askyoursenior.firebaseoperation.FirebaseStorageOperation;
-import com.example.askyoursenior.firebaseoperation.RealtimeDatabase;
+import com.example.askyoursenior.firebaseoperation.RealtimeDatabaseOperation;
 import com.example.askyoursenior.model.BookDetailModel;
 import com.example.askyoursenior.model.SharedPreferenceDb;
 
@@ -109,7 +107,7 @@ public class AddBook extends AppCompatActivity {
             if(selectedImageUri != null)
                 FirebaseStorageOperation.pushDataWithBookImage(this, selectedImageUri, bookDetailModel, organization);
             else
-                RealtimeDatabase.PushBookDetails(this, bookDetailModel, organization);
+                RealtimeDatabaseOperation.PushBookDetails(this, bookDetailModel, organization);
 
         }
 

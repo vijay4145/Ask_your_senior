@@ -8,7 +8,6 @@ import com.example.askyoursenior.fragments.bookfragment.AddBook;
 import com.example.askyoursenior.model.BookDetailModel;
 import com.example.askyoursenior.model.RealtimeDatabaseModel;
 import com.google.android.gms.tasks.OnCompleteListener;
-import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
@@ -24,7 +23,7 @@ public class FirebaseStorageOperation {
                 if(task.isSuccessful()){
                     reference.getDownloadUrl().addOnSuccessListener(uri -> {
                         bookDetailModel.setBook_image_url(uri.toString());
-                        RealtimeDatabase.PushBookDetails(context, bookDetailModel, orgname);
+                        RealtimeDatabaseOperation.PushBookDetails(context, bookDetailModel, orgname);
                     });
                 }
             }
