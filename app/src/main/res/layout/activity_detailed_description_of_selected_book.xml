@@ -23,6 +23,7 @@
             android:layout_height="0dp"
             android:src="@drawable/stack_of_books"
             android:scaleType="fitCenter"
+            android:transitionName="@string/transition_of_book_image"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent"

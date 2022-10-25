@@ -1,7 +1,10 @@
 package com.example.askyoursenior.adapter;
 
+import android.app.Activity;
+import android.app.ActivityOptions;
 import android.content.Context;
 import android.content.Intent;
+import android.util.Pair;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -12,6 +15,7 @@ import androidx.annotation.NonNull;
 import androidx.databinding.DataBindingUtil;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.bumptech.glide.Glide;
 import com.example.askyoursenior.R;
 import com.example.askyoursenior.databinding.BookListCardViewBinding;
 import com.example.askyoursenior.fragments.bookfragment.DetailedDescriptionOfSelectedBookActivity;
@@ -44,6 +48,7 @@ public class BookListRecyclerviewAdapter extends RecyclerView.Adapter<BookListRe
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
         BookDetailModel bookDetail = bookDetailModelArrayList.get(position);
         holder.bind(bookDetail);
+
         holder.bookListCardViewBinding.boolListCardViewMainLayout.setOnClickListener(view -> holder.cardClicked(bookDetail));
     }
 
@@ -62,6 +67,12 @@ public class BookListRecyclerviewAdapter extends RecyclerView.Adapter<BookListRe
         }
 
         public void bind(BookDetailModel bookDetailModel){
+            //book icon loading
+            if(!bookDetailModel.getBook_image_url().equals("null")) {
+                Glide.with(context).load(bookDetailModel.getBook_image_url())
+                        .placeholder(R.drawable.stack_of_books)
+                        .into(bookListCardViewBinding.bookIcon);
+            }
             bookListCardViewBinding.setBookDetail(bookDetailModel);
             bookListCardViewBinding.executePendingBindings();
         }
@@ -78,7 +89,9 @@ public class BookListRecyclerviewAdapter extends RecyclerView.Adapter<BookListRe
             intent.putExtra("Book_posted_by", bookDetailModel.getPosted_by());
             intent.putExtra("Book_price", bookDetailModel.getPrice());
             intent.putExtra("Book_contact_number", bookDetailModel.getPhone_number());
-            context.startActivity(intent);
+            Pair<View, String> pair = new Pair<>(bookListCardViewBinding.bookIcon, "book_image_transition");
+            ActivityOptions options = ActivityOptions.makeSceneTransitionAnimation((Activity) context, pair);
+            context.startActivity(intent, options.toBundle());
         }
     }
 }

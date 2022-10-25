@@ -26,6 +26,7 @@
             android:layout_width="wrap_content"
             android:layout_height="0dp"
             android:adjustViewBounds="true"
+            android:transitionName="@string/transition_of_book_image"
             android:maxWidth="70dp"
             android:maxHeight="70dp"
             android:scaleType="fitCenter"

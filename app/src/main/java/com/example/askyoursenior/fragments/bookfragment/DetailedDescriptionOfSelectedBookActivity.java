@@ -7,14 +7,12 @@ import androidx.lifecycle.ViewModelProvider;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.widget.Toast;
 
+import com.bumptech.glide.Glide;
 import com.example.askyoursenior.R;
 import com.example.askyoursenior.databinding.ActivityDetailedDescriptionOfSelectedBookBinding;
 import com.example.askyoursenior.model.BookDetailModel;
 import com.example.askyoursenior.viewmodel.bookfragmentvm.DetailedDescriptionOfSelectedBookActivityvm;
-import com.google.firebase.auth.FirebaseAuth;
-import com.google.firebase.auth.FirebaseUser;
 
 public class DetailedDescriptionOfSelectedBookActivity extends AppCompatActivity {
     ActivityDetailedDescriptionOfSelectedBookBinding descriptionOfSelectedBookBinding;
@@ -27,11 +25,14 @@ public class DetailedDescriptionOfSelectedBookActivity extends AppCompatActivity
 
         BookDetailModel bookDetail = getBookDetails();
         descriptionOfSelectedBookBinding.setBookDetail(bookDetail);
+        //book icon loading
+        if(!bookDetail.getBook_image_url().equals("null")) {
+            Glide.with(this).load(bookDetail.getBook_image_url())
+                    .placeholder(R.drawable.stack_of_books)
+                    .into(descriptionOfSelectedBookBinding.bookPicImageview);
+        }
         descriptionOfSelectedBookBinding.whatsappButton.setOnClickListener(view -> sendMessageThroughWhatsApp(bookDetail.getPosted_by(), bookDetail.getBook_name(), bookDetail.getPhone_number()));
 
-        FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
-        assert user != null;
-        Toast.makeText(this, user.getPhoneNumber().toString(), Toast.LENGTH_SHORT).show();
     }
 
     private void sendMessageThroughWhatsApp(String username, String bookName, String phonenum) {

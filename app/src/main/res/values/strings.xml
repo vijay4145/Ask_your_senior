@@ -1,6 +1,7 @@
 <resources>
     <string name="app_name">Ask Your Senior</string>
     <string name="rupee_symbol">₹</string>
+    <string name="transition_of_book_image">book_image_transition</string>
 
     <!--    app walkthrough -->
     <string name="app_description_page1">"Here to help you to get connected with seniors of your organization"</string>
