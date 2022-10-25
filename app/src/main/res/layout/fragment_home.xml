@@ -53,6 +53,7 @@
             android:layout_height="0dp"
             android:layout_marginEnd="12dp"
             android:background="@color/white"
+            android:visibility="gone"
             android:src="@drawable/ic_baseline_filter_list_24"
             app:layout_constraintBottom_toBottomOf="@id/books_searchview"
             app:layout_constraintEnd_toEndOf="parent"

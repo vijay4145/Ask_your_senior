@@ -72,6 +72,20 @@ public class HomeFragment extends Fragment {
 //        bookDetailModelArrayList.add(book4);
 
 
+        fragmentHomeBinding.notificationImagebutton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Toast.makeText(fragmentHomeBinding.getRoot().getContext(), "No Notification", Toast.LENGTH_SHORT).show();
+            }
+        });
+
+        fragmentHomeBinding.filterbutton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+            }
+        });
+
 
 
         bookListRecyclerviewAdapter = new BookListRecyclerviewAdapter(bookDetailModelArrayList);

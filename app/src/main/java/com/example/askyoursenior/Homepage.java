@@ -32,11 +32,6 @@ public class Homepage extends AppCompatActivity {
         NotificationOfNewUserRegisteredOnSameOrganization.subscribe(val);
 
 
-
-
-
-
-
 //        -----------------------------
 //        make service of this code
         FirebaseMessaging.getInstance().getToken()
@@ -79,6 +74,8 @@ public class Homepage extends AppCompatActivity {
             }
             return true;
         });
+
+
 
 
     }

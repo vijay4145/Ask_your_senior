@@ -106,6 +106,8 @@ public class ProfileFragment extends Fragment {
 
 
 
+
+
     }
 
     private void openLinkInWhatsapp() {
