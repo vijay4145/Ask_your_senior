@@ -132,4 +132,9 @@ public class LoginActivity extends AppCompatActivity {
         return iserror;
     }
 
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+        finishAffinity();
+    }
 }

@@ -5,6 +5,7 @@ public class User {
     String username;
     String phone_number;
     String organisationname;
+    String linkedinId, githubLink;
 
 
     public User() {
@@ -50,4 +51,21 @@ public class User {
     public void setOrganisationname(String organisationname) {
         this.organisationname = organisationname;
     }
+
+    public String getLinkedinId() {
+        return linkedinId;
+    }
+
+    public void setLinkedinId(String linkedinId) {
+        this.linkedinId = linkedinId;
+    }
+
+    public String getGithubLink() {
+        return githubLink;
+    }
+
+    public void setGithubLink(String githubLink) {
+        this.githubLink = githubLink;
+    }
+
 }

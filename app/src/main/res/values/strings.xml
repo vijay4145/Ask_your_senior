@@ -10,11 +10,16 @@
     <string name="app_title_page3">Buy Old Academics Books Of Your Senior</string>
     <string name="app_description_page3">Worry about buying expensive new books from book store don\'t worry when you can Ask Your Senior</string>
 
-    <!--    login page-->
+    <!--    login page and Account setting activity-->
     <string name="google_sign_in_instruction">Sign in with google to continue with us</string>
     <string name="username_hint">Username</string>
+    <string name="userid_hint">UserId</string>
     <string name="organization_hint">Enter Your Organization</string>
+    <string name="linked_id_hint">LinkedIn Id Link</string>
+    <string name="github_id_hint">Github Link</string>
+    <string name="phone_number_hint">Phone Number</string>
     <string name="continue_btn">Continue</string>
+    <string name="update_profile_button">Update Profile</string>
 
     <!--    bottom navigation bar-->
     <string name="homepage">Homepage</string>
@@ -49,8 +54,10 @@
     <string name="application_info_description2">
         If you are a student and learning to develop Android development you are welcome to contribute us in our project</string>
 
-<!--        activity detailed description of selected book-->
+    <!--        activity detailed description of selected book-->
     <string name="book_detailed_description_whatsapp_button_name">Whatsapp</string>
+
+<!--    activity account settings-->
 
 
 </resources>

@@ -67,6 +67,7 @@
                 app:layout_constraintBottom_toBottomOf="parent">
 
                 <ImageButton
+                    android:id="@+id/logout_button"
                     android:layout_width="25dp"
                     android:layout_height="25dp"
                     android:background="@color/white"
@@ -116,29 +117,32 @@
                     app:layout_constraintTop_toBottomOf="@id/organization_name"
                     app:layout_constraintStart_toStartOf="parent">
                     <ImageButton
+                        android:id="@+id/github_icon"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:src="@drawable/github_icon"
                         android:layout_weight="1"
                         android:background="@drawable/profile_fragment_profile_pic_circle_background"/>
                     <ImageButton
+                        android:id="@+id/linkedin_icon"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:src="@drawable/linkedin"
                         android:layout_weight="1"
                         android:background="@drawable/profile_fragment_profile_pic_circle_background"/>
                     <ImageButton
+                        android:id="@+id/whatsapp_icon"
                         android:layout_width="wrap_content"
                         android:layout_height="match_parent"
                         android:src="@drawable/whatsapp_icon"
                         android:layout_weight="1"
                         android:background="@drawable/profile_fragment_profile_pic_circle_background"/>
-                    <ImageButton
-                        android:layout_width="wrap_content"
-                        android:layout_height="match_parent"
-                        android:src="@drawable/view_more"
-                        android:layout_weight="1"
-                        android:background="@drawable/profile_fragment_profile_pic_circle_background"/>
+<!--                    <ImageButton-->
+<!--                        android:layout_width="wrap_content"-->
+<!--                        android:layout_height="match_parent"-->
+<!--                        android:src="@drawable/view_more"-->
+<!--                        android:layout_weight="1"-->
+<!--                        android:background="@drawable/profile_fragment_profile_pic_circle_background"/>-->
 
                 </androidx.appcompat.widget.LinearLayoutCompat>
 
@@ -182,7 +186,7 @@
                         app:layout_constraintBottom_toBottomOf="@id/account_setting_textview"/>
                 </androidx.constraintlayout.widget.ConstraintLayout>
                 <androidx.constraintlayout.widget.ConstraintLayout
-                    android:id="@+id/my_projects_layout"
+                    android:id="@+id/applicatio_info_layout"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_margin="15dp"
@@ -197,7 +201,7 @@
                         android:id="@+id/icon2"
                         android:layout_width="28dp"
                         android:layout_height="28dp"
-                        android:src="@drawable/ic_baseline_laptop_mac_24"
+                        android:src="@drawable/ic_baseline_info_black_24"
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toTopOf="parent"/>
                     <TextView
@@ -206,7 +210,7 @@
                         android:layout_height="match_parent"
                         android:gravity="center_vertical"
                         android:layout_marginStart="5dp"
-                        android:text="My Projects"
+                        android:text="Application info"
                         app:layout_constraintStart_toEndOf="@id/icon2"
                         app:layout_constraintTop_toTopOf="parent"
                         app:layout_constraintBottom_toBottomOf="parent"/>
@@ -220,14 +224,14 @@
                         app:layout_constraintBottom_toBottomOf="@id/my_projects_textview"/>
                 </androidx.constraintlayout.widget.ConstraintLayout>
                 <androidx.constraintlayout.widget.ConstraintLayout
-                    android:id="@+id/my_whishlist_layout"
+                    android:id="@+id/logout_layout"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_margin="15dp"
                     android:background="@color/white"
                     android:elevation="2dp"
                     android:padding="7dp"
-                    app:layout_constraintTop_toBottomOf="@id/my_projects_layout"
+                    app:layout_constraintTop_toBottomOf="@id/applicatio_info_layout"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintEnd_toEndOf="parent">
 
@@ -235,7 +239,7 @@
                         android:id="@+id/icon3"
                         android:layout_width="28dp"
                         android:layout_height="28dp"
-                        android:src="@drawable/ic_baseline_favorite_24"
+                        android:src="@drawable/ic_baseline_logout_black"
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toTopOf="parent"/>
                     <TextView
@@ -244,7 +248,7 @@
                         android:layout_height="match_parent"
                         android:gravity="center_vertical"
                         android:layout_marginStart="5dp"
-                        android:text="My Whishlist"
+                        android:text="Logout"
                         app:layout_constraintStart_toEndOf="@id/icon3"
                         app:layout_constraintTop_toTopOf="parent"
                         app:layout_constraintBottom_toBottomOf="parent"/>

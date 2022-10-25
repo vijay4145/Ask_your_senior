@@ -11,10 +11,12 @@ import androidx.annotation.NonNull;
 
 import com.example.askyoursenior.Homepage;
 import com.example.askyoursenior.fragments.bookfragment.AddBook;
+import com.example.askyoursenior.fragments.profilepackage.AccountSettingsActivity;
 import com.example.askyoursenior.model.BookDetailModel;
 import com.example.askyoursenior.model.RealtimeDatabaseModel;
 import com.example.askyoursenior.model.SharedPreferenceDb;
 import com.example.askyoursenior.model.User;
+import com.example.askyoursenior.shared_preferences_operation.UserDetailFromLocalDb;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.database.DatabaseReference;
@@ -39,6 +41,22 @@ public class RealtimeDatabaseOperation {
                     Intent intent = new Intent(context, Homepage.class);
                     context.startActivity(intent);
                     ((Activity)context).finish();
+                }
+                else
+                    Toast.makeText(context, task.toString(), Toast.LENGTH_SHORT).show();
+            }
+        });
+    }
+
+
+    public static void PushUserExtraDetails(Context context, User user){
+        DatabaseReference databaseReference = FirebaseDatabase.getInstance().getReference();
+        databaseReference.child(RealtimeDatabaseModel.USER).child(user.getOrganisationname()).child(user.getUsername()).setValue(user).addOnCompleteListener(new OnCompleteListener<Void>() {
+            @Override
+            public void onComplete(@NonNull Task<Void> task) {
+                if(task.isSuccessful()) {
+                    UserDetailFromLocalDb.setExtraUserDetails(context, user);
+                    ((AccountSettingsActivity)context).finish();
                 }
                 else
                     Toast.makeText(context, task.toString(), Toast.LENGTH_SHORT).show();
