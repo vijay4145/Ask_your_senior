@@ -27,28 +27,24 @@ public class DetailedDescriptionOfSelectedBookActivity extends AppCompatActivity
 
         BookDetailModel bookDetail = getBookDetails();
         descriptionOfSelectedBookBinding.setBookDetail(bookDetail);
-        descriptionOfSelectedBookBinding.whatsappButton.setOnClickListener(view -> sendMessageThroughWhatsApp(bookDetail.getPosted_by(), getBookDetails().getBook_name()));
+        descriptionOfSelectedBookBinding.whatsappButton.setOnClickListener(view -> sendMessageThroughWhatsApp(bookDetail.getPosted_by(), bookDetail.getBook_name(), bookDetail.getPhone_number()));
 
         FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
         assert user != null;
         Toast.makeText(this, user.getPhoneNumber().toString(), Toast.LENGTH_SHORT).show();
     }
 
-    private void sendMessageThroughWhatsApp(String username, String bookName) {
+    private void sendMessageThroughWhatsApp(String username, String bookName, String phonenum) {
 //        Toast.makeText(this, "clicked", Toast.LENGTH_SHORT).show();
 
 
-        String phonenum = "user_phone_num";
+//        String phonenum = "user_phone_num";
         String msg = "Hello this is " + username + " looking forward to know more about the book " + bookName + " that you posted in Ask Your Senior Application";
         Intent sendIntent = new Intent(Intent.ACTION_SEND);
         sendIntent.setType("text/plain");
         sendIntent.putExtra(Intent.EXTRA_TEXT, msg);
         sendIntent.putExtra("jid", phonenum + "@s.whatsapp.net"); //phone number without "+" prefix
         sendIntent.setPackage("com.whatsapp");
-//        if (intent.resolveActivity(getActivity().getPackageManager()) == null) {
-//            Toast.makeText(this, "Error/n" + e.toString(), Toast.LENGTH_SHORT).show();
-//            return;
-//        }
         startActivity(sendIntent);
     }
 
@@ -63,6 +59,7 @@ public class DetailedDescriptionOfSelectedBookActivity extends AppCompatActivity
         bookDetailModel.setDescription(intent.getStringExtra("Book_description"));
         bookDetailModel.setPosted_by(intent.getStringExtra("Book_posted_by"));
         bookDetailModel.setPrice(intent.getStringExtra("Book_price"));
+        bookDetailModel.setPhone_number("91" + intent.getStringExtra("Book_contact_number"));
         return bookDetailModel;
     }
 }

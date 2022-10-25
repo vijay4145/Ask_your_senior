@@ -77,6 +77,7 @@ public class BookListRecyclerviewAdapter extends RecyclerView.Adapter<BookListRe
             intent.putExtra("Book_description", bookDetailModel.getDescription());
             intent.putExtra("Book_posted_by", bookDetailModel.getPosted_by());
             intent.putExtra("Book_price", bookDetailModel.getPrice());
+            intent.putExtra("Book_contact_number", bookDetailModel.getPhone_number());
             context.startActivity(intent);
         }
     }

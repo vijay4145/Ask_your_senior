@@ -79,10 +79,11 @@ public class AddBook extends AppCompatActivity {
         String semester = activityAddBookBinding.bookSemesterEdittext.getText().toString();
         String price = activityAddBookBinding.bookPriceEdittext.getText().toString();
         String description = activityAddBookBinding.bookDescriptionEdittext.getText().toString();
+        String phoneNum = activityAddBookBinding.bookContactEdittext.getText().toString();
 
 
         if(book_name.equals("") || publication.equals("") || branch.equals("") || semester.equals("") ||
-            price.equals("") || description.equals("")){
+            price.equals("") || description.equals("") || phoneNum.equals("")){
             Toast.makeText(this, "Please complete all the fields", Toast.LENGTH_SHORT).show();
         }else{
 
@@ -103,6 +104,7 @@ public class AddBook extends AppCompatActivity {
             bookDetailModel.setDescription(description);
             bookDetailModel.setPosted_by(username);
             bookDetailModel.setBook_image_url("null");
+            bookDetailModel.setPhone_number(phoneNum);
 
             if(selectedImageUri != null)
                 FirebaseStorageOperation.pushDataWithBookImage(this, selectedImageUri, bookDetailModel, organization);

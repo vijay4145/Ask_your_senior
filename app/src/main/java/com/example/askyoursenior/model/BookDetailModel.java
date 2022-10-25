@@ -4,11 +4,12 @@ public class BookDetailModel {
     String book_name, book_publication, posted_by, semester, branch, price;
     String description;
     String book_image_url;
+    String phone_number;
 
     public BookDetailModel() {
     }
 
-    public BookDetailModel(String book_name, String book_publication, String posted_by, String semester, String branch, String price, String description) {
+    public BookDetailModel(String book_name, String book_publication, String posted_by, String semester, String branch, String price, String description, String phone_number) {
         this.book_name = book_name;
         this.book_publication = book_publication;
         this.posted_by = posted_by;
@@ -16,6 +17,7 @@ public class BookDetailModel {
         this.branch = branch;
         this.price = price;
         this.description = description;
+        this.phone_number = phone_number;
     }
 
     public String getBook_name() {
@@ -80,5 +82,13 @@ public class BookDetailModel {
 
     public void setBook_image_url(String book_image_url) {
         this.book_image_url = book_image_url;
+    }
+
+    public String getPhone_number() {
+        return phone_number;
+    }
+
+    public void setPhone_number(String phone_number) {
+        this.phone_number = phone_number;
     }
 }
