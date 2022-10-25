@@ -40,4 +40,13 @@
     <string name="book_price">Price</string>
     <string name="description_edittext_hint">Desription</string>
 
+
+<!--    application info-->
+    <string name="application_info_description1">Hello This App is developed to encourage the culture of collaborative programming and development which helps students to connect with their seniors.</string>
+    <string name="application_info_description2">
+        If you are a student and learning to develop Android development you are welcome to contribute us in our project</string>
+
+<!--    add book-->
+
+
 </resources>

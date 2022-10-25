@@ -75,6 +75,7 @@
                     app:layout_constraintTop_toTopOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"/>
                 <ImageButton
+                    android:id="@+id/application_info_button"
                     android:layout_width="25dp"
                     android:layout_height="25dp"
                     android:layout_margin="5dp"
