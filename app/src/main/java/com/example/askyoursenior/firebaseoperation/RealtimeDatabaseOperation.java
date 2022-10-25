@@ -49,6 +49,8 @@ public class RealtimeDatabaseOperation {
     }
 
 
+
+
     public static void PushUserExtraDetails(Context context, User user){
         DatabaseReference databaseReference = FirebaseDatabase.getInstance().getReference();
         databaseReference.child(RealtimeDatabaseModel.USER).child(user.getOrganisationname()).child(user.getUsername()).setValue(user).addOnCompleteListener(new OnCompleteListener<Void>() {
