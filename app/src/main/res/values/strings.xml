@@ -1,5 +1,6 @@
 <resources>
     <string name="app_name">Ask Your Senior</string>
+    <string name="rupee_symbol">₹</string>
 
     <!--    app walkthrough -->
     <string name="app_description_page1">"Here to help you to get connected with seniors of your organization"</string>
@@ -41,12 +42,13 @@
     <string name="description_edittext_hint">Desription</string>
 
 
-<!--    application info-->
+    <!--    application info-->
     <string name="application_info_description1">Hello This App is developed to encourage the culture of collaborative programming and development which helps students to connect with their seniors.</string>
     <string name="application_info_description2">
         If you are a student and learning to develop Android development you are welcome to contribute us in our project</string>
 
-<!--    add book-->
+<!--        activity detailed description of selected book-->
+    <string name="book_detailed_description_whatsapp_button_name">Whatsapp</string>
 
 
 </resources>

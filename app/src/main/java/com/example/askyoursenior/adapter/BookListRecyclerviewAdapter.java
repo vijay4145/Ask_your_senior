@@ -1,5 +1,7 @@
 package com.example.askyoursenior.adapter;
 
+import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -12,6 +14,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.askyoursenior.R;
 import com.example.askyoursenior.databinding.BookListCardViewBinding;
+import com.example.askyoursenior.fragments.bookfragment.DetailedDescriptionOfSelectedBookActivity;
 import com.example.askyoursenior.model.BookDetailModel;
 
 import java.util.ArrayList;
@@ -48,11 +51,14 @@ public class BookListRecyclerviewAdapter extends RecyclerView.Adapter<BookListRe
     public int getItemCount() {
         return bookDetailModelArrayList.size();
     }
+
     public class ViewHolder extends RecyclerView.ViewHolder{
         BookListCardViewBinding bookListCardViewBinding;
+        Context context;
         public ViewHolder(BookListCardViewBinding bookListCardViewBinding) {
             super(bookListCardViewBinding.getRoot());
             this.bookListCardViewBinding = bookListCardViewBinding;
+            context = bookListCardViewBinding.getRoot().getContext();
         }
 
         public void bind(BookDetailModel bookDetailModel){
@@ -61,7 +67,17 @@ public class BookListRecyclerviewAdapter extends RecyclerView.Adapter<BookListRe
         }
 
         public void cardClicked(BookDetailModel bookDetailModel){
-            Toast.makeText(itemView.getContext(), "clicked ", Toast.LENGTH_SHORT).show();
+//            Toast.makeText(itemView.getContext(), "clicked ", Toast.LENGTH_SHORT).show();
+            Intent intent = new Intent(context, DetailedDescriptionOfSelectedBookActivity.class);
+            intent.putExtra("Book_name", bookDetailModel.getBook_name());
+            intent.putExtra("Book_semester", bookDetailModel.getSemester());
+            intent.putExtra("Book_imageurl", bookDetailModel.getBook_image_url());
+            intent.putExtra("Book_publication", bookDetailModel.getBook_publication());
+            intent.putExtra("Book_branch", bookDetailModel.getBranch());
+            intent.putExtra("Book_description", bookDetailModel.getDescription());
+            intent.putExtra("Book_posted_by", bookDetailModel.getPosted_by());
+            intent.putExtra("Book_price", bookDetailModel.getPrice());
+            context.startActivity(intent);
         }
     }
 }

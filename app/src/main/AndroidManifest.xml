@@ -17,6 +17,13 @@
         android:theme="@style/Theme.AskYourSenior.dark"
         tools:targetApi="31">
         <activity
+            android:name=".fragments.bookfragment.DetailedDescriptionOfSelectedBookActivity"
+            android:exported="false">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
             android:name=".fragments.profilepackage.ApplicationInfo"
             android:exported="false">
             <meta-data
