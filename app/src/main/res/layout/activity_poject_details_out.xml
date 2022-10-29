@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="projectDetails"
+            type="com.example.askyoursenior.model.CollabContainer" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".homepage_fragments.collab_fragment.PojectDetailsOut">
+
+        <TextView
+            android:id="@+id/projname"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="32dp"
+            android:fontFamily="@font/baloo_bhai"
+            android:text="@={projectDetails.projectname}"
+            android:textSize="24sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.329"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:id="@+id/proIconout"
+            android:layout_width="120dp"
+            android:layout_height="105dp"
+            android:layout_marginTop="40dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.498"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/projname"
+            app:srcCompat="@drawable/ic_baseline_account_circle_24" />
+
+        <View
+            android:id="@+id/view4"
+            android:layout_width="wrap_content"
+            android:layout_height="1dp"
+            android:layout_marginTop="16dp"
+            android:background="@color/grey"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/projname" />
+
+        <TextView
+            android:id="@+id/prodesout"
+            android:layout_width="338dp"
+            android:layout_height="139dp"
+            android:layout_marginTop="28dp"
+            android:text="@={projectDetails.projectdescription}"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.395"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/proIconout" />
+
+        <View
+            android:id="@+id/view5"
+            android:layout_width="wrap_content"
+            android:layout_height="1dp"
+            android:layout_marginTop="28dp"
+            android:background="@color/grey"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/prodesout" />
+
+        <TextView
+            android:id="@+id/contactDet_heah"
+            android:layout_width="160dp"
+            android:layout_height="30dp"
+            android:layout_marginTop="20dp"
+            android:fontFamily="@font/baloo_bhai"
+            android:text="@string/add_cd"
+            android:textColor="@color/black"
+            android:textSize="16sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.115"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/view5" />
+
+        <ImageView
+            android:id="@+id/linkedIn_icon"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="68dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.044"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/contactDet_heah"
+            app:srcCompat="@drawable/icons8_linkedin_circled" />
+
+        <ImageView
+            android:id="@+id/phone_icon"
+            android:layout_width="45dp"
+            android:layout_height="50dp"
+            android:layout_marginStart="296dp"
+            android:layout_marginTop="68dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/contactDet_heah"
+            app:srcCompat="@drawable/ic_baseline_phone_24" />
+
+        <ImageView
+            android:id="@+id/email_icon"
+            android:layout_width="45dp"
+            android:layout_height="50dp"
+            android:layout_marginTop="68dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.48"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/contactDet_heah"
+            app:srcCompat="@drawable/ic_baseline_email_24" />
+
+        <ImageView
+            android:id="@+id/whatsapp_icon"
+            android:layout_width="45dp"
+            android:layout_height="50dp"
+            android:layout_marginTop="68dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.688"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/contactDet_heah"
+            app:srcCompat="@drawable/ic_baseline_whatsapp_24" />
+
+        <ImageView
+            android:id="@+id/github_icon"
+            android:layout_width="49dp"
+            android:layout_height="49dp"
+            android:layout_marginTop="68dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.27"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/contactDet_heah"
+            app:srcCompat="@drawable/icons8_github" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

@@ -1,4 +1,4 @@
-<resources>
+<resources xmlns:tools="http://schemas.android.com/tools">
     <string name="app_name">Ask Your Senior</string>
     <string name="rupee_symbol">₹</string>
     <string name="transition_of_book_image">book_image_transition</string>
@@ -60,4 +60,27 @@
 <!--    activity account settings-->
 
 
+
+    <!--    Collab page-->
+    <string name="add_new_button">ADD NEW</string>
+    <string name="collab_projectname">PROJECT NAME</string>
+    <string name="collab_description">COLLAB DESCRIPTION</string>
+    <string name="by_username">By "USERNAME"</string>
+
+    <!--   Project Details-->
+    <string name="pdadd">Add Project Name Here</string>
+    <string name="Project_name">Project Name</string>
+    <string name="pd">Add Project Description Here</string>
+    <string name="add_cd">ADD Contact Details </string>
+    <string name="eligibility">Eligibilities/Technologies To Have Knowledge About</string>
+    <string name="pn">Add Project Name </string>
+    <string name="ad">ADD </string>
+    <string name="prodhead">Project Details </string>
+    <string name="prodeshint">Add Project Description Here </string>
+    <string name="pronamehint">Project Name </string>
+    <string name="linkedin">Link of your LinkedIn ID </string>
+    <string name="email">Link of your email address </string>
+    <string name="github">Link of your GitHub ID </string>
+    <string name="phone">Enter your Phone Number </string>
+    <string name="whatsapp">Enter your Phone Number  </string>
 </resources>
