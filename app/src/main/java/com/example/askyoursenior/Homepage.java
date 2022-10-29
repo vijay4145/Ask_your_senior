@@ -44,13 +44,18 @@ public class Homepage extends AppCompatActivity {
                         if (!task.isSuccessful()) {
                             Toast.makeText(Homepage.this, "token not generated", Toast.LENGTH_SHORT).show();
                             return;
+                        }else{
+                            // Get new FCM registration token
+
+                            String token = task.getResult();
+//                            Toast.makeText(Homepage.this, "token is " + token, Toast.LENGTH_SHORT).show();
+
+                            // Log and toast
+                            Log.d("myTokenForNotification", "token is " +token);
                         }
 
-                        // Get new FCM registration token
-                        String token = task.getResult();
 
-                        // Log and toast
-                        Log.i("myTokenForNotification", token);
+
                     }
                 });
 

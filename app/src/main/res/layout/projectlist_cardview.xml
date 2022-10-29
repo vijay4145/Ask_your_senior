@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="project_detail"
+            type="com.example.askyoursenior.model.CollabContainer" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/cardView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_margin="25dp"
+        android:elevation="3dp">
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="0dp"
+            android:layout_height="100dp"
+            android:layout_margin="20dp"
+            android:elevation="2dp"
+            app:cardCornerRadius="10dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="400dp"
+                android:layout_height="match_parent"
+                android:layout_margin="10dp">
+
+                <ImageView
+                    android:id="@+id/project_icon"
+                    android:layout_width="70dp"
+                    android:layout_height="70dp"
+                    android:layout_marginStart="4dp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintVertical_bias="0.16"
+                    app:srcCompat="@drawable/ic_baseline_account_circle_24" />
+
+                <TextView
+                    android:id="@+id/projectName"
+                    android:layout_width="212dp"
+                    android:layout_height="0dp"
+                    android:layout_marginTop="8dp"
+                    android:fontFamily="@font/baloo_bhai"
+                    android:text="@={project_detail.projectname}"
+                    android:textSize="20sp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.147"
+                    app:layout_constraintStart_toEndOf="@+id/project_icon"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/by"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@={project_detail.by}"
+                    app:layout_constraintBottom_toTopOf="@+id/collab_description"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.072"
+                    app:layout_constraintStart_toEndOf="@+id/project_icon"
+                    app:layout_constraintTop_toBottomOf="@+id/projectName"
+                    app:layout_constraintVertical_bias="0.0" />
+
+                <TextView
+                    android:id="@+id/collab_description"
+                    android:layout_width="250dp"
+                    android:layout_height="24dp"
+                    android:layout_marginStart="16dp"
+                    android:fontFamily="@font/baloo_bhai"
+                    android:text="@={project_detail.projectdescription}"
+                    android:textSize="16sp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toEndOf="@+id/project_icon"
+                    app:layout_constraintTop_toBottomOf="@+id/projectName"
+                    app:layout_constraintVertical_bias="1.0" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </androidx.cardview.widget.CardView>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

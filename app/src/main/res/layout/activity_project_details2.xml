@@ -1,0 +1,207 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools" >
+
+    <data>
+
+    </data>
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ImageView
+            android:id="@+id/proIcon"
+            android:layout_width="410dp"
+            android:layout_height="145dp"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="4dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/view"
+            app:srcCompat="@drawable/ic_baseline_account_circle_24" />
+
+        <TextView
+            android:id="@+id/prodhead"
+            android:layout_width="230dp"
+            android:layout_height="48dp"
+            android:fontFamily="@font/baloo_bhai"
+            android:shadowColor="@color/black"
+            android:text="@string/prodhead"
+            android:textColor="@color/black"
+            android:textSize="24sp"
+            app:layout_constraintBottom_toTopOf="@+id/view"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.082"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <Button
+            android:id="@+id/button"
+            android:layout_width="83dp"
+            android:layout_height="48dp"
+            android:layout_marginEnd="24dp"
+            android:text="@string/ad"
+            app:layout_constraintBottom_toBottomOf="@+id/prodhead"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/prodhead"
+            app:layout_constraintVertical_bias="0.0" />
+
+        <View
+            android:id="@+id/view"
+            android:layout_width="wrap_content"
+            android:layout_height="1dp"
+            android:background="@color/grey"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.11" />
+
+        <View
+            android:id="@+id/view2"
+            android:layout_width="wrap_content"
+            android:layout_height="1dp"
+            android:background="@color/grey"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/proIcon" />
+
+        <TextView
+            android:id="@+id/username"
+            android:layout_width="268dp"
+            android:layout_height="22dp"
+            android:layout_marginTop="16dp"
+            android:fontFamily="@font/baloo_bhai"
+            android:text="@string/by_username"
+            android:textColor="@color/black"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.111"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/view2" />
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/project_name_edittextlayout"
+            style="@style/Widget.MaterialComponents.TextInputLayout.FilledBox.ExposedDropdownMenu"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="15dp"
+            android:elevation="4dp"
+            android:hint="@string/Project_name"
+            app:endIconMode="none"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/username">
+
+            <com.google.android.material.textfield.MaterialAutoCompleteTextView
+                android:id="@+id/project_name_edittext"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/white"
+                android:singleLine="true" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/project_des_edittextlayout"
+            style="@style/Widget.MaterialComponents.TextInputLayout.FilledBox.ExposedDropdownMenu"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="15dp"
+            android:elevation="4dp"
+            android:hint="@string/pd"
+            app:endIconMode="none"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/project_name_edittextlayout">
+
+            <com.google.android.material.textfield.MaterialAutoCompleteTextView
+                android:id="@+id/project_des_edittext"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/white"
+                android:singleLine="true" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <View
+            android:id="@+id/view3"
+            android:layout_width="wrap_content"
+            android:layout_height="1dp"
+            android:layout_marginTop="24dp"
+            android:background="@color/grey"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/project_des_edittextlayout" />
+
+        <TextView
+            android:id="@+id/contactDet_heah"
+            android:layout_width="160dp"
+            android:layout_height="30dp"
+            android:layout_marginTop="20dp"
+            android:fontFamily="@font/baloo_bhai"
+            android:text="@string/add_cd"
+            android:textColor="@color/black"
+            android:textSize="16sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.063"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/view3" />
+
+        <ImageView
+            android:id="@+id/linkedIn_icon"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="68dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.044"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/contactDet_heah"
+            app:srcCompat="@drawable/icons8_linkedin_circled" />
+
+        <ImageView
+            android:id="@+id/phone_icon"
+            android:layout_width="45dp"
+            android:layout_height="50dp"
+            android:layout_marginStart="296dp"
+            android:layout_marginTop="68dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/contactDet_heah"
+            app:srcCompat="@drawable/ic_baseline_phone_24" />
+
+        <ImageView
+            android:id="@+id/email_icon"
+            android:layout_width="45dp"
+            android:layout_height="50dp"
+            android:layout_marginTop="68dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.48"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/contactDet_heah"
+            app:srcCompat="@drawable/ic_baseline_email_24" />
+
+        <ImageView
+            android:id="@+id/whatsapp_icon"
+            android:layout_width="45dp"
+            android:layout_height="50dp"
+            android:layout_marginTop="68dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.688"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/contactDet_heah"
+            app:srcCompat="@drawable/ic_baseline_whatsapp_24" />
+
+        <ImageView
+            android:id="@+id/github_icon"
+            android:layout_width="49dp"
+            android:layout_height="49dp"
+            android:layout_marginTop="68dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.27"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/contactDet_heah"
+            app:srcCompat="@drawable/icons8_github" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>

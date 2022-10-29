@@ -28,7 +28,6 @@
             android:layout_height="wrap_content"
             android:text="Gaurav Apte"
             android:layout_margin="50dp"
-            android:fontFamily="@font/bungee"
             android:textSize="55sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"

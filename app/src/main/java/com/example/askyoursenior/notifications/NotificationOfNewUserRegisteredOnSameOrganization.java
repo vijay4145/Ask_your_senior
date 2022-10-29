@@ -66,6 +66,7 @@ public class NotificationOfNewUserRegisteredOnSameOrganization extends FirebaseM
     }
 
     public static void subscribe(String orgname){
+        orgname = orgname.replaceAll(" ","_");
         FirebaseMessaging.getInstance().subscribeToTopic(orgname);
     }
 }
