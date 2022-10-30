@@ -47,6 +47,9 @@ public class ProfileFragment extends Fragment {
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
+        fragmentProfileBinding.userName.setText(UserDetailFromLocalDb.getUserName(getContext()));
+        fragmentProfileBinding.organizationName.setText(UserDetailFromLocalDb.getOrgname(getContext()));
+
 
         fragmentProfileBinding.applicationInfoButton.setOnClickListener(view1 -> {
             Intent intent = new Intent(getActivity(), ApplicationInfo.class);

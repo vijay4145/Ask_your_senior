@@ -6,12 +6,14 @@ import androidx.databinding.DataBindingUtil;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
+import android.widget.Toast;
 
 import com.bumptech.glide.Glide;
 import com.example.askyoursenior.R;
 import com.example.askyoursenior.databinding.ActivityPojectDetailsOutBinding;
 
 import com.example.askyoursenior.model.ProjectDetailModel;
+import com.example.askyoursenior.model.SharedPreferenceDb;
 import com.example.askyoursenior.shared_preferences_operation.UserDetailFromLocalDb;
 
 public class PojectDetailsOut extends AppCompatActivity {
@@ -32,13 +34,13 @@ public class PojectDetailsOut extends AppCompatActivity {
         }
 
         pojectDetailsOutBinding.linkedInIcon.setOnClickListener(view -> {
-            String LinkedIn_link = UserDetailFromLocalDb.getLinkedinId(view.getContext());
-            openLinkinBrowser(LinkedIn_link);
+            if(projectDetailModel.getLinkedInIdLink() != null && !projectDetailModel.getLinkedInIdLink().equals(""))
+                openLinkInBrowser(projectDetailModel.getGithubIdLink());
         });
 
         pojectDetailsOutBinding.githubIcon.setOnClickListener(view -> {
-            String github_link = UserDetailFromLocalDb.getGithubId(view.getContext());
-            openLinkinBrowser(github_link);
+            if(projectDetailModel.getGithubIdLink() != null && !projectDetailModel.getGithubIdLink().equals(""))
+                openLinkInBrowser(projectDetailModel.getGithubIdLink());
         });
 
         pojectDetailsOutBinding.whatsappIcon.setOnClickListener(view -> openLinkinWhatsapp());
@@ -57,9 +59,13 @@ public class PojectDetailsOut extends AppCompatActivity {
         startActivity(sendIntent);
     }
 
-    private void openLinkinBrowser(String link){
+    void openLinkInBrowser(String link){
+        if(link.equals(SharedPreferenceDb.NOT_FOUND_ERROR) || link.equals("")) {
+            Toast.makeText(getApplicationContext(), "Please Complete Your Profile", Toast.LENGTH_SHORT).show();
+            return;
+        }
         Intent browserIntent = new Intent(Intent.ACTION_VIEW, Uri.parse(link));
-        pojectDetailsOutBinding.getRoot().getContext().startActivity(browserIntent);
+        startActivity(browserIntent);
     }
 
     ProjectDetailModel getProjectDetails () {
