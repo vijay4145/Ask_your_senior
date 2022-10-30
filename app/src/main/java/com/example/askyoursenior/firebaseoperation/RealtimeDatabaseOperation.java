@@ -11,8 +11,10 @@ import androidx.annotation.NonNull;
 
 import com.example.askyoursenior.Homepage;
 import com.example.askyoursenior.fragments.bookfragment.AddBook;
+import com.example.askyoursenior.fragments.collab_fragment.ProjectDetails;
 import com.example.askyoursenior.fragments.profilepackage.AccountSettingsActivity;
 import com.example.askyoursenior.model.BookDetailModel;
+import com.example.askyoursenior.model.CollabContainer;
 import com.example.askyoursenior.model.RealtimeDatabaseModel;
 import com.example.askyoursenior.model.SharedPreferenceDb;
 import com.example.askyoursenior.model.User;
@@ -75,6 +77,21 @@ public class RealtimeDatabaseOperation {
                     Log.d("firebaseError", task.getException().toString());
                 }else{
                     context.submittedBookDetails();
+                }
+            }
+        });
+    }
+
+    public static void PushProjectDetails(ProjectDetails context , CollabContainer collabContainer ,String orgname){
+        DatabaseReference databaseReference = FirebaseDatabase.getInstance().getReference();
+        databaseReference.child(RealtimeDatabaseModel.PROJECT_DETAILS).child(orgname).push().setValue(collabContainer).addOnCompleteListener(new OnCompleteListener<Void>() {
+            @Override
+            public void onComplete(@NonNull Task<Void> task) {
+                if(!task.isSuccessful()){
+                    Log.d("firebaseError",task.getException().toString());
+                }
+                else{
+                    context.submittedProjectDetails();
                 }
             }
         });

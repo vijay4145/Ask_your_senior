@@ -26,6 +26,8 @@ import android.widget.Toast;
 import com.example.askyoursenior.DialogBox;
 import com.example.askyoursenior.R;
 import com.example.askyoursenior.databinding.ActivityProjectDetails2Binding;
+import com.example.askyoursenior.firebaseoperation.FirebaseStorageOperation;
+import com.example.askyoursenior.firebaseoperation.RealtimeDatabaseOperation;
 import com.example.askyoursenior.general_functions.CreateDialogBox;
 import com.example.askyoursenior.model.CollabContainer;
 import com.example.askyoursenior.model.SharedPreferenceDb;
@@ -71,10 +73,6 @@ public class ProjectDetails extends AppCompatActivity {
         });
 
         projectDetails2Binding.emailIcon.setOnClickListener(view ->{
-            openDialog();
-        });
-
-        projectDetails2Binding.phoneIcon.setOnClickListener(view ->{
             openDialog();
         });
 
@@ -130,7 +128,10 @@ public class ProjectDetails extends AppCompatActivity {
 
 
             if (selectedImageUri != null) {
-//                    FirebaseStorageOperation.pushDataWithproIcon(this , selectedImageUri,collabContainer);
+                FirebaseStorageOperation.pushDataWithProIcon(this ,selectedImageUri,collabContainer,organization);
+            }
+            else{
+                RealtimeDatabaseOperation.PushProjectDetails(this,collabContainer,organization);
             }
         }
 

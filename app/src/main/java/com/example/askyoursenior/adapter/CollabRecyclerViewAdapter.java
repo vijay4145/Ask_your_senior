@@ -22,6 +22,7 @@ import com.example.askyoursenior.homepage_fragments.collab_fragment.PojectDetail
 import com.example.askyoursenior.model.CollabContainer;
 
 import java.util.ArrayList;
+import java.util.Objects;
 
 public class CollabRecyclerViewAdapter extends RecyclerView.Adapter<CollabRecyclerViewAdapter.ViewHolder>{
     private ArrayList<CollabContainer> collabContainerArrayList;
@@ -41,7 +42,7 @@ public class CollabRecyclerViewAdapter extends RecyclerView.Adapter<CollabRecycl
     public CollabRecyclerViewAdapter.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         ProjectlistCardviewBinding projectlistCardviewBinding = DataBindingUtil.inflate(LayoutInflater.from(parent.getContext()),R.layout.projectlist_cardview,parent,false);
 
-//        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.projectlist_cardview,parent,false);
+        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.projectlist_cardview,parent,false);
         return new ViewHolder(projectlistCardviewBinding);
     }
 
@@ -53,7 +54,9 @@ public class CollabRecyclerViewAdapter extends RecyclerView.Adapter<CollabRecycl
         holder.projectlistCardviewBinding.projectName.setText(collabContainer.getProjectname());
 
         holder.bind(collabContainer);
-        holder.projectlistCardviewBinding.cardView.setOnClickListener(view -> holder.cardClicked(collabContainer));
+        holder.projectlistCardviewBinding.cardView.setOnClickListener(view -> {
+            holder.cardClicked(collabContainer);
+        });
     }
 
     @Override
@@ -69,6 +72,7 @@ public class CollabRecyclerViewAdapter extends RecyclerView.Adapter<CollabRecycl
             super(itemView.getRoot());
              this.projectlistCardviewBinding = itemView ;
              this.context = itemView.getRoot().getContext();
+//             context = itemView.getRoot().getContext();
         }
 
         public void bind(CollabContainer collabContainer) {
@@ -84,6 +88,7 @@ public class CollabRecyclerViewAdapter extends RecyclerView.Adapter<CollabRecycl
             Intent intent = new Intent(context , PojectDetailsOut.class);
             intent.putExtra("Project_name" , collabContainer.getProjectname());
             intent.putExtra("Project_description" , collabContainer.getProjectdescription());
+            intent.putExtra("Project_imageurl",collabContainer.getImageurl());
             Pair<View, String> pair =new Pair<>(projectlistCardviewBinding.projectIcon , "project_icon_transition");
             ActivityOptions options = ActivityOptions.makeSceneTransitionAnimation((Activity) context, pair);
             context.startActivity(intent, options.toBundle());

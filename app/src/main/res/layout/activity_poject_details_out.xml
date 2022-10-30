@@ -89,30 +89,20 @@
             android:id="@+id/linkedIn_icon"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="68dp"
+            android:layout_marginTop="76dp"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.044"
+            app:layout_constraintHorizontal_bias="0.191"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/contactDet_heah"
             app:srcCompat="@drawable/icons8_linkedin_circled" />
 
         <ImageView
-            android:id="@+id/phone_icon"
-            android:layout_width="45dp"
-            android:layout_height="50dp"
-            android:layout_marginStart="296dp"
-            android:layout_marginTop="68dp"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/contactDet_heah"
-            app:srcCompat="@drawable/ic_baseline_phone_24" />
-
-        <ImageView
             android:id="@+id/email_icon"
             android:layout_width="45dp"
             android:layout_height="50dp"
-            android:layout_marginTop="68dp"
+            android:layout_marginTop="76dp"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.48"
+            app:layout_constraintHorizontal_bias="0.622"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/contactDet_heah"
             app:srcCompat="@drawable/ic_baseline_email_24" />
@@ -121,9 +111,9 @@
             android:id="@+id/whatsapp_icon"
             android:layout_width="45dp"
             android:layout_height="50dp"
-            android:layout_marginTop="68dp"
+            android:layout_marginTop="76dp"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.688"
+            app:layout_constraintHorizontal_bias="0.83"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/contactDet_heah"
             app:srcCompat="@drawable/ic_baseline_whatsapp_24" />
@@ -132,9 +122,9 @@
             android:id="@+id/github_icon"
             android:layout_width="49dp"
             android:layout_height="49dp"
-            android:layout_marginTop="68dp"
+            android:layout_marginTop="76dp"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.27"
+            app:layout_constraintHorizontal_bias="0.4"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/contactDet_heah"
             app:srcCompat="@drawable/icons8_github" />
