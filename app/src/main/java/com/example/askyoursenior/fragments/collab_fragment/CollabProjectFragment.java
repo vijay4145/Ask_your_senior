@@ -98,8 +98,6 @@ public class CollabProjectFragment extends Fragment {
                     projectDetailModel.add(dataSnapshot1.getValue(ProjectDetailModel.class));
                     Log.d("firebase", "project name is " + projectDetailModel.get(projectDetailModel.size()-1).getProjectName());
                 }
-                for(ProjectDetailModel projectDetailModel: projectDetailModel)
-                    Toast.makeText(getContext(), projectDetailModel.getProjectName(), Toast.LENGTH_SHORT).show();
                 collabRecyclerViewAdapter.setfilteredList(projectDetailModel);
             }
         });;
