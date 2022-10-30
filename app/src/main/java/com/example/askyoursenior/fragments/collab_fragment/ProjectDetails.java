@@ -1,4 +1,4 @@
-package com.example.askyoursenior.homepage_fragments.collab_fragment;
+package com.example.askyoursenior.fragments.collab_fragment;
 
 
 import  androidx.activity.result.ActivityResultLauncher;
@@ -11,6 +11,7 @@ import androidx.databinding.DataBindingUtil;
 import android.Manifest;
 import android.annotation.SuppressLint;
 import android.app.Activity;
+import android.app.Dialog;
 import android.app.ProgressDialog;
 import android.content.Intent;
 import android.content.SharedPreferences;
@@ -25,6 +26,7 @@ import android.widget.Toast;
 import com.example.askyoursenior.DialogBox;
 import com.example.askyoursenior.R;
 import com.example.askyoursenior.databinding.ActivityProjectDetails2Binding;
+import com.example.askyoursenior.general_functions.CreateDialogBox;
 import com.example.askyoursenior.model.CollabContainer;
 import com.example.askyoursenior.model.SharedPreferenceDb;
 import com.google.firebase.auth.FirebaseAuth;
@@ -40,18 +42,14 @@ public class ProjectDetails extends AppCompatActivity {
     private Uri selectedImageUri;
     ActivityResultLauncher<Intent> intentLauncher;
     ProgressDialog dialog;
-    FirebaseAuth auth;
+    Dialog dialogBoxToAddSocialMediaLink;
     ActivityProjectDetails2Binding projectDetails2Binding;
-    FirebaseDatabase database;
-    DatabaseReference projectdetailsdb;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_project_details2);
         projectDetails2Binding = DataBindingUtil.setContentView(this, R.layout.activity_project_details2);
-        auth = FirebaseAuth.getInstance();
-        database = FirebaseDatabase.getInstance();
+        dialogBoxToAddSocialMediaLink = CreateDialogBox.setDialogbox(this, R.layout.add_social_media_link_dialog_box);
 
         projectDetails2Binding.proIcon.setOnClickListener(view -> {
             addProjectDetailsToFirebase();
@@ -68,7 +66,6 @@ public class ProjectDetails extends AppCompatActivity {
                         projectDetails2Binding.proIcon.setImageURI(data.getData());
                     }
                 });
-        projectdetailsdb = FirebaseDatabase.getInstance().getReference().child("Project Details");
 
 
         projectDetails2Binding.linkedInIcon.setOnClickListener(view -> {
@@ -94,8 +91,12 @@ public class ProjectDetails extends AppCompatActivity {
     }
 
     public void openDialog(){
-        DialogBox dialogBox = new DialogBox();
-        dialogBox.show(getSupportFragmentManager(),"Dialog Box");
+//        DialogBox dialogBox = new DialogBox();
+//        dialogBox.show(getSupportFragmentManager(),"Dialog Box");
+
+
+        dialogBoxToAddSocialMediaLink.show();
+        dialogBoxToAddSocialMediaLink.findViewById()
     }
 
     private void getPhotoFromGallary() {

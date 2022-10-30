@@ -1,4 +1,4 @@
-package com.example.askyoursenior.fragments;
+package com.example.askyoursenior.fragments.collab_fragment;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -14,7 +14,6 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 
-import com.example.askyoursenior.homepage_fragments.collab_fragment.ProjectDetails;
 import com.example.askyoursenior.R;
 import com.example.askyoursenior.adapter.CollabRecyclerViewAdapter;
 import com.example.askyoursenior.model.CollabContainer;

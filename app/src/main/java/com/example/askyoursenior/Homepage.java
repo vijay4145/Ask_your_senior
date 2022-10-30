@@ -11,7 +11,7 @@ import android.widget.Toast;
 
 import com.example.askyoursenior.databinding.ActivityHomepageBinding;
 import com.example.askyoursenior.firebaseoperation.RealtimeDatabaseOperation;
-import com.example.askyoursenior.fragments.CollabProjectFragment;
+import com.example.askyoursenior.fragments.collab_fragment.CollabProjectFragment;
 import com.example.askyoursenior.fragments.bookfragment.HomeFragment;
 import com.example.askyoursenior.fragments.profilepackage.ProfileFragment;
 import com.example.askyoursenior.model.SharedPreferenceDb;
