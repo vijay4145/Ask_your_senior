@@ -12,6 +12,7 @@ import com.bumptech.glide.Glide;
 import com.example.askyoursenior.R;
 import com.example.askyoursenior.databinding.ActivityDetailedDescriptionOfSelectedBookBinding;
 import com.example.askyoursenior.model.BookDetailModel;
+import com.example.askyoursenior.shared_preferences_operation.UserDetailFromLocalDb;
 import com.example.askyoursenior.viewmodel.bookfragmentvm.DetailedDescriptionOfSelectedBookActivityvm;
 
 public class DetailedDescriptionOfSelectedBookActivity extends AppCompatActivity {
@@ -40,7 +41,7 @@ public class DetailedDescriptionOfSelectedBookActivity extends AppCompatActivity
 
 
 //        String phonenum = "user_phone_num";
-        String msg = "Hello this is " + username + " looking forward to know more about the book " + bookName + " that you posted in Ask Your Senior Application";
+        String msg = "Hello this is " + UserDetailFromLocalDb.getUserName(this) + " looking forward to know more about the book " + bookName + " that you posted in Ask Your Senior Application";
         Intent sendIntent = new Intent(Intent.ACTION_SEND);
         sendIntent.setType("text/plain");
         sendIntent.putExtra(Intent.EXTRA_TEXT, msg);
