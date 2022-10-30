@@ -12,7 +12,7 @@ public class CreateDialogBox {
     public static Dialog setDialogbox(Context context, int layout) {
         Dialog dialog = new Dialog(context);
         dialog.setContentView(layout);
-        dialog.getWindow().setLayout(ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT);
+        dialog.getWindow().setLayout(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT);
         dialog.setCancelable(true);
         dialog.getWindow().getAttributes().windowAnimations = R.style.animation;
         dialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));

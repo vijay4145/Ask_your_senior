@@ -6,15 +6,18 @@
     <data>
         <variable
             name="project_detail"
-            type="com.example.askyoursenior.model.CollabContainer" />
+            type="com.example.askyoursenior.model.ProjectDetailModel" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/cardView"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_margin="25dp"
-        android:elevation="3dp">
+        android:layout_height="wrap_content"
+        app:cardElevation="3dp"
+        app:cardCornerRadius="10dp"
+        app:contentPaddingLeft="5dp"
+        android:layout_marginBottom="15dp"
+        >
 
         <androidx.cardview.widget.CardView
             android:layout_width="0dp"
@@ -49,7 +52,7 @@
                     android:layout_height="0dp"
                     android:layout_marginTop="8dp"
                     android:fontFamily="@font/baloo_bhai"
-                    android:text="@={project_detail.projectname}"
+                    android:text="@={project_detail.projectName}"
                     android:textSize="20sp"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintHorizontal_bias="0.147"
@@ -60,7 +63,7 @@
                     android:id="@+id/by"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@={project_detail.by}"
+                    android:text="@={project_detail.postedBy}"
                     app:layout_constraintBottom_toTopOf="@+id/collab_description"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintHorizontal_bias="0.072"
@@ -74,7 +77,7 @@
                     android:layout_height="24dp"
                     android:layout_marginStart="16dp"
                     android:fontFamily="@font/baloo_bhai"
-                    android:text="@={project_detail.projectdescription}"
+                    android:text="@={project_detail.projectDescription}"
                     android:textSize="16sp"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintStart_toEndOf="@+id/project_icon"

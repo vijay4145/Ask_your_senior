@@ -38,7 +38,7 @@
             app:layout_constraintTop_toTopOf="parent" />
 
         <Button
-            android:id="@+id/button"
+            android:id="@+id/add_project_button"
             android:layout_width="83dp"
             android:layout_height="48dp"
             android:layout_marginEnd="24dp"

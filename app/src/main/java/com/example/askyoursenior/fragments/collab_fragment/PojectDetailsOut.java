@@ -1,20 +1,17 @@
-package com.example.askyoursenior.homepage_fragments.collab_fragment;
+package com.example.askyoursenior.fragments.collab_fragment;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.databinding.DataBindingUtil;
-import androidx.lifecycle.ViewModelProvider;
 
-import android.app.Activity;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
-import android.view.View;
 
 import com.bumptech.glide.Glide;
 import com.example.askyoursenior.R;
 import com.example.askyoursenior.databinding.ActivityPojectDetailsOutBinding;
 
-import com.example.askyoursenior.model.CollabContainer;
+import com.example.askyoursenior.model.ProjectDetailModel;
 import com.example.askyoursenior.shared_preferences_operation.UserDetailFromLocalDb;
 
 public class PojectDetailsOut extends AppCompatActivity {
@@ -23,41 +20,28 @@ public class PojectDetailsOut extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_poject_details_out);
         pojectDetailsOutBinding = DataBindingUtil.setContentView(this, R.layout.activity_poject_details_out);
 
-        CollabContainer collabContainer = getProjectDetails();
-        pojectDetailsOutBinding.setProjectDetails(collabContainer);
+        ProjectDetailModel projectDetailModel = getProjectDetails();
+        pojectDetailsOutBinding.setProjectDetails(projectDetailModel);
 
-        if (collabContainer.getImageurl().equals("null")) ;
-        {
-            Glide.with(this).load(collabContainer.getImageurl())
+        if(projectDetailModel.getImageUrl() != null && projectDetailModel.getImageUrl().equals("null")) {
+            Glide.with(this).load(projectDetailModel.getImageUrl())
                     .placeholder(R.drawable.ic_baseline_account_circle_24)
                     .into(pojectDetailsOutBinding.proIconout);
         }
 
-        pojectDetailsOutBinding.linkedInIcon.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                String LinkedIn_link = UserDetailFromLocalDb.getLinkedinId(view.getContext());
-                openLinkinBrowser(LinkedIn_link);
-            }
+        pojectDetailsOutBinding.linkedInIcon.setOnClickListener(view -> {
+            String LinkedIn_link = UserDetailFromLocalDb.getLinkedinId(view.getContext());
+            openLinkinBrowser(LinkedIn_link);
         });
 
-        pojectDetailsOutBinding.githubIcon.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                String github_link = UserDetailFromLocalDb.getGithubId(view.getContext());
-                openLinkinBrowser(github_link);
-            }
+        pojectDetailsOutBinding.githubIcon.setOnClickListener(view -> {
+            String github_link = UserDetailFromLocalDb.getGithubId(view.getContext());
+            openLinkinBrowser(github_link);
         });
 
-        pojectDetailsOutBinding.whatsappIcon.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                openLinkinWhatsapp();
-            }
-        });
+        pojectDetailsOutBinding.whatsappIcon.setOnClickListener(view -> openLinkinWhatsapp());
 
     }
 
@@ -78,13 +62,17 @@ public class PojectDetailsOut extends AppCompatActivity {
         pojectDetailsOutBinding.getRoot().getContext().startActivity(browserIntent);
     }
 
-    CollabContainer getProjectDetails () {
+    ProjectDetailModel getProjectDetails () {
         Intent intent = getIntent();
-        CollabContainer collabContainer = new CollabContainer();
-        collabContainer.setUsername(intent.getStringExtra("username"));
-        collabContainer.setProjectname(intent.getStringExtra("project_name"));
-        collabContainer.setProjectdescription(intent.getStringExtra("project_description"));
-        return collabContainer;
+        ProjectDetailModel projectDetailModel = new ProjectDetailModel();
+        projectDetailModel.setPostedBy(intent.getStringExtra("Project_posted_by"));
+        projectDetailModel.setProjectName(intent.getStringExtra("Project_name"));
+        projectDetailModel.setProjectDescription(intent.getStringExtra("Project_description"));
+        projectDetailModel.setGithubIdLink(intent.getStringExtra("Project_githubIdLink"));
+        projectDetailModel.setImageUrl(intent.getStringExtra("Project_imageurl"));
+        projectDetailModel.setLinkedInIdLink(intent.getStringExtra("Project_poster_linkedIn_id"));
+        projectDetailModel.setWhatsappNumber(intent.getStringExtra("Project_posted_by_whatsapp_number"));
+        return projectDetailModel;
     }
 }
 

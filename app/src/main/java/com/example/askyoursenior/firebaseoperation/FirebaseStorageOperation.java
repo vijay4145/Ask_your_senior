@@ -7,7 +7,7 @@ import androidx.annotation.NonNull;
 import com.example.askyoursenior.fragments.bookfragment.AddBook;
 import com.example.askyoursenior.fragments.collab_fragment.ProjectDetails;
 import com.example.askyoursenior.model.BookDetailModel;
-import com.example.askyoursenior.model.CollabContainer;
+import com.example.askyoursenior.model.ProjectDetailModel;
 import com.example.askyoursenior.model.RealtimeDatabaseModel;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
@@ -32,7 +32,7 @@ public class FirebaseStorageOperation {
         });
     }
 
-    public static void pushDataWithProIcon(ProjectDetails context , Uri imageUri , CollabContainer collabContainer ,String orgname){
+    public static void pushDataWithProIcon(ProjectDetails context , Uri imageUri , ProjectDetailModel projectDetailModel, String orgname){
         FirebaseStorage firebaseStorage = FirebaseStorage.getInstance();
         StorageReference reference = firebaseStorage.getReference().child(RealtimeDatabaseModel.PROJECT_DETAILS);
         reference.putFile(imageUri).addOnCompleteListener(new OnCompleteListener<UploadTask.TaskSnapshot>() {
@@ -40,8 +40,8 @@ public class FirebaseStorageOperation {
             public void onComplete(@NonNull Task<UploadTask.TaskSnapshot> task) {
                 if(task.isSuccessful()){
                     reference.getDownloadUrl().addOnSuccessListener(uri -> {
-                        collabContainer.setImageurl(uri.toString());
-                        RealtimeDatabaseOperation.PushProjectDetails(context ,collabContainer ,orgname);
+                        projectDetailModel.setImageUrl(uri.toString());
+                        RealtimeDatabaseOperation.PushProjectDetails(context , projectDetailModel,orgname);
                     });
                 }
             }

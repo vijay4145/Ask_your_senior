@@ -14,7 +14,7 @@ import com.example.askyoursenior.fragments.bookfragment.AddBook;
 import com.example.askyoursenior.fragments.collab_fragment.ProjectDetails;
 import com.example.askyoursenior.fragments.profilepackage.AccountSettingsActivity;
 import com.example.askyoursenior.model.BookDetailModel;
-import com.example.askyoursenior.model.CollabContainer;
+import com.example.askyoursenior.model.ProjectDetailModel;
 import com.example.askyoursenior.model.RealtimeDatabaseModel;
 import com.example.askyoursenior.model.SharedPreferenceDb;
 import com.example.askyoursenior.model.User;
@@ -82,9 +82,9 @@ public class RealtimeDatabaseOperation {
         });
     }
 
-    public static void PushProjectDetails(ProjectDetails context , CollabContainer collabContainer ,String orgname){
+    public static void PushProjectDetails(ProjectDetails context , ProjectDetailModel projectDetailModel, String orgname){
         DatabaseReference databaseReference = FirebaseDatabase.getInstance().getReference();
-        databaseReference.child(RealtimeDatabaseModel.PROJECT_DETAILS).child(orgname).push().setValue(collabContainer).addOnCompleteListener(new OnCompleteListener<Void>() {
+        databaseReference.child(RealtimeDatabaseModel.PROJECT_DETAILS).child(orgname).push().setValue(projectDetailModel).addOnCompleteListener(new OnCompleteListener<Void>() {
             @Override
             public void onComplete(@NonNull Task<Void> task) {
                 if(!task.isSuccessful()){

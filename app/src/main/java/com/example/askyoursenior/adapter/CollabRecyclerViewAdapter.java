@@ -18,21 +18,20 @@ import com.example.askyoursenior.R;
 
 import com.example.askyoursenior.databinding.ProjectlistCardviewBinding;
 
-import com.example.askyoursenior.homepage_fragments.collab_fragment.PojectDetailsOut;
-import com.example.askyoursenior.model.CollabContainer;
+import com.example.askyoursenior.fragments.collab_fragment.PojectDetailsOut;
+import com.example.askyoursenior.model.ProjectDetailModel;
 
 import java.util.ArrayList;
-import java.util.Objects;
 
 public class CollabRecyclerViewAdapter extends RecyclerView.Adapter<CollabRecyclerViewAdapter.ViewHolder>{
-    private ArrayList<CollabContainer> collabContainerArrayList;
-    public CollabRecyclerViewAdapter(ArrayList<CollabContainer> collabContainerArrayList){
-        this.collabContainerArrayList =  collabContainerArrayList;
+    private ArrayList<ProjectDetailModel> projectDetailModelArrayList;
+    public CollabRecyclerViewAdapter(ArrayList<ProjectDetailModel> projectDetailModelArrayList){
+        this.projectDetailModelArrayList = projectDetailModelArrayList;
 
     }
 
-    public void setfilteredList(ArrayList<CollabContainer> filteredCollabContainerArrayList){
-        this.collabContainerArrayList = filteredCollabContainerArrayList;
+    public void setfilteredList(ArrayList<ProjectDetailModel> filteredProjectDetailModelArrayList){
+        this.projectDetailModelArrayList = filteredProjectDetailModelArrayList;
         notifyDataSetChanged();
 
 
@@ -41,27 +40,21 @@ public class CollabRecyclerViewAdapter extends RecyclerView.Adapter<CollabRecycl
     @Override
     public CollabRecyclerViewAdapter.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         ProjectlistCardviewBinding projectlistCardviewBinding = DataBindingUtil.inflate(LayoutInflater.from(parent.getContext()),R.layout.projectlist_cardview,parent,false);
-
-        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.projectlist_cardview,parent,false);
         return new ViewHolder(projectlistCardviewBinding);
     }
 
     @Override
     public void onBindViewHolder(@NonNull CollabRecyclerViewAdapter.ViewHolder holder, int position) {
-        CollabContainer collabContainer = collabContainerArrayList.get(position);
-        holder.projectlistCardviewBinding.collabDescription.setText(collabContainer.getProjectdescription());
-        holder.projectlistCardviewBinding.by.setText(collabContainer.getUsername());
-        holder.projectlistCardviewBinding.projectName.setText(collabContainer.getProjectname());
-
-        holder.bind(collabContainer);
+        ProjectDetailModel projectDetailModel = projectDetailModelArrayList.get(position);
+        holder.bind(projectDetailModel);
         holder.projectlistCardviewBinding.cardView.setOnClickListener(view -> {
-            holder.cardClicked(collabContainer);
+            holder.cardClicked(projectDetailModel);
         });
     }
 
     @Override
     public int getItemCount() {
-        return collabContainerArrayList.size();
+        return projectDetailModelArrayList.size();
     }
 
     public static class ViewHolder extends RecyclerView.ViewHolder {
@@ -75,20 +68,24 @@ public class CollabRecyclerViewAdapter extends RecyclerView.Adapter<CollabRecycl
 //             context = itemView.getRoot().getContext();
         }
 
-        public void bind(CollabContainer collabContainer) {
-            if (collabContainer.getImageurl() != null && !collabContainer.getImageurl().equals("null")) {
-                Glide.with(context).load(collabContainer.getImageurl())
+        public void bind(ProjectDetailModel projectDetailModel) {
+            if (projectDetailModel.getImageUrl() != null && !projectDetailModel.getImageUrl().equals("null")) {
+                Glide.with(context).load(projectDetailModel.getImageUrl())
                         .placeholder(R.drawable.ic_baseline_account_circle_24)
                         .into(projectlistCardviewBinding.projectIcon);
             }
-            projectlistCardviewBinding.setProjectDetail(collabContainer);
+            projectlistCardviewBinding.setProjectDetail(projectDetailModel);
             projectlistCardviewBinding.executePendingBindings();
         }
-        public void cardClicked(CollabContainer collabContainer){
+        public void cardClicked(ProjectDetailModel projectDetailModel){
             Intent intent = new Intent(context , PojectDetailsOut.class);
-            intent.putExtra("Project_name" , collabContainer.getProjectname());
-            intent.putExtra("Project_description" , collabContainer.getProjectdescription());
-            intent.putExtra("Project_imageurl",collabContainer.getImageurl());
+            intent.putExtra("Project_name" , projectDetailModel.getProjectName());
+            intent.putExtra("Project_description" , projectDetailModel.getProjectDescription());
+            intent.putExtra("Project_imageurl", projectDetailModel.getImageUrl());
+            intent.putExtra("Project_githubIdLink", projectDetailModel.getGithubIdLink());
+            intent.putExtra("Project_posted_by",projectDetailModel.getPostedBy());
+            intent.putExtra("Project_poster_linkedIn_id", projectDetailModel.getLinkedInIdLink());
+            intent.putExtra("Project_posted_by_whatsapp_number",projectDetailModel.getWhatsappNumber());
             Pair<View, String> pair =new Pair<>(projectlistCardviewBinding.projectIcon , "project_icon_transition");
             ActivityOptions options = ActivityOptions.makeSceneTransitionAnimation((Activity) context, pair);
             context.startActivity(intent, options.toBundle());

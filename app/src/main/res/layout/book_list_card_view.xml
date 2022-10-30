@@ -14,7 +14,8 @@
         app:cardElevation="3dp"
         app:cardCornerRadius="10dp"
         app:contentPaddingLeft="5dp"
-        android:layout_marginBottom="15dp">
+        android:layout_marginBottom="15dp"
+        >
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:id="@+id/bool_list_card_view_main_layout"
