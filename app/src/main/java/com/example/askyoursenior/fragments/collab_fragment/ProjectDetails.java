@@ -42,14 +42,12 @@ public class ProjectDetails extends AppCompatActivity {
     private Uri selectedImageUri;
     ActivityResultLauncher<Intent> intentLauncher;
     ProgressDialog dialog;
-    Dialog dialogBoxToAddSocialMediaLink;
     ActivityProjectDetails2Binding projectDetails2Binding;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         projectDetails2Binding = DataBindingUtil.setContentView(this, R.layout.activity_project_details2);
-        dialogBoxToAddSocialMediaLink = CreateDialogBox.setDialogbox(this, R.layout.add_social_media_link_dialog_box);
 
         projectDetails2Binding.proIcon.setOnClickListener(view -> {
             addProjectDetailsToFirebase();
@@ -91,12 +89,8 @@ public class ProjectDetails extends AppCompatActivity {
     }
 
     public void openDialog(){
-//        DialogBox dialogBox = new DialogBox();
-//        dialogBox.show(getSupportFragmentManager(),"Dialog Box");
-
-
-        dialogBoxToAddSocialMediaLink.show();
-        dialogBoxToAddSocialMediaLink.findViewById()
+        DialogBox dialogBox = new DialogBox();
+        dialogBox.show(getSupportFragmentManager(),"Dialog Box");
     }
 
     private void getPhotoFromGallary() {
